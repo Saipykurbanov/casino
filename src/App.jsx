@@ -1,6 +1,4 @@
-import Button from "./components/button/Button"
-import Input from "./components/input/Input"
-import InputWithBtn from "./components/input/InputWithBtn"
+import { BrowserRouter as Router,  Routes, Route} from 'react-router-dom';
 
 
 function App() {
@@ -8,7 +6,22 @@ function App() {
   return (
     <main>
       
-      
+      <div className="container">
+
+          <Router>
+
+            <Routes>
+
+              <Route path='' element={''}/>
+              <Route path='' element={''}/>
+              <Route path='' element={''}/>
+              <Route path='' element={''}/>
+
+            </Routes>
+
+          </Router>
+
+      </div>
 
     </main>
   )
