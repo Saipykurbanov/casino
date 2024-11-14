@@ -1,6 +1,7 @@
 import { BrowserRouter as Router,  Routes, Route} from 'react-router-dom';
 import Header from './components/header/Header';
 import Sidebar from './components/sidebar/Sidebar';
+import Footer from './components/footer/Footer';
 
 
 function App() {
@@ -24,6 +25,8 @@ function App() {
 
             </Routes>
 
+            <Footer />
+            
           </Router>
 
       </div>
