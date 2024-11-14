@@ -44,4 +44,13 @@
             }
         }
     }
+    &.white {
+        border: 1px solid var(--white);
+        background-color: var(--white);
+        @include mediaMinWidth(992) {
+            &:hover {
+                background-color: transparent;
+            }
+        }
+    }
 }

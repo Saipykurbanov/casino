@@ -1,0 +1,54 @@
+@import './../../../style/common';
+
+.sidebar {
+    position: fixed;
+    top: 30px;
+    bottom: 30px;
+    height: auto;
+    left: 15px;
+    width: 110px;
+    border-radius: 20px;
+    background: var(--blue-grey);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0px;
+    gap: 20px;
+    @include mediaMaxWidth(991) {
+        display: none;
+    }
+    nav {
+        display: flex;
+        flex-direction: column;
+        gap: 3dvh;
+        a {
+            svg {
+                path {
+                    transition: 0.4s;
+                }
+            }
+            @include mediaMinWidth(992) {
+                &:hover {
+                    svg {
+                        path {
+                            fill: var(--blue);
+                        }
+                    }
+                }
+            }
+            &:nth-child(1) {
+                @include mediaMinWidth(992) {
+                    &:hover {
+                        svg {
+                            path {
+                                stroke: var(--blue);
+                                fill: transparent;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
