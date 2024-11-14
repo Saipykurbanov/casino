@@ -1,0 +1,51 @@
+@charset "UTF-8";
+/*-------------Миксины----------------*/
+.input_field {
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .input_field label {
+    font-size: calc(12px + 3.4 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .input_field label {
+    font-size: calc(12px + 2 * 0.0520833333vw);
+  }
+}
+.input_field input {
+  width: 100%;
+  padding: 10px 15px;
+  background-color: var(--black);
+  color: var(--white);
+  border-radius: 10px;
+}
+@media (max-width: 768px) {
+  .input_field input {
+    font-size: calc(14px + 3.4 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .input_field input {
+    font-size: calc(14px + 2 * 0.0520833333vw);
+  }
+}
+.input_field .input_wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 15px;
+  background-color: var(--black);
+  border-radius: 10px;
+  gap: 10px;
+}
+.input_field .input_wrapper input {
+  padding: 0;
+}
+.input_field .input_wrapper .button_block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}/*# sourceMappingURL=input.css.map */

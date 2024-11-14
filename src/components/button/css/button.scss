@@ -1,0 +1,47 @@
+@import './../../../style/common';
+
+.main_button {
+    width: max-content;
+    padding: 6px 16px;
+    @include adaptiveFont(16, 14);
+    color: var(--white);
+    border-radius: 10px;
+    border: 1px solid var(--blue);
+    transition: 0.4s;
+    @include mediaMinWidth(992) {
+        &:hover {
+            background-color: var(--blue);
+        }
+    }
+    &.fill {
+        background-color: var(--blue);
+        @include mediaMinWidth(992) {
+            &:hover {
+                background-color: transparent;
+            }
+        }
+    }
+    &.full {
+        width: 100%;
+    }
+    &.flex {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+    &.small {
+        padding: 4px 8px;
+        font-size: 14px;
+        border-radius: 5px;
+    }
+    &.pink {
+        border: 1px solid var(--pink);
+        background-color: var(--pink);
+        @include mediaMinWidth(992) {
+            &:hover {
+                background-color: transparent;
+            }
+        }
+    }
+}

@@ -1,0 +1,57 @@
+@charset "UTF-8";
+/*-------------Миксины----------------*/
+.main_button {
+  width: -moz-max-content;
+  width: max-content;
+  padding: 6px 16px;
+  color: var(--white);
+  border-radius: 10px;
+  border: 1px solid var(--blue);
+  transition: 0.4s;
+}
+@media (max-width: 768px) {
+  .main_button {
+    font-size: calc(14px + 3.4 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .main_button {
+    font-size: calc(14px + 2 * 0.0520833333vw);
+  }
+}
+@media screen and (min-width: 992px) {
+  .main_button:hover {
+    background-color: var(--blue);
+  }
+}
+.main_button.fill {
+  background-color: var(--blue);
+}
+@media screen and (min-width: 992px) {
+  .main_button.fill:hover {
+    background-color: transparent;
+  }
+}
+.main_button.full {
+  width: 100%;
+}
+.main_button.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.main_button.small {
+  padding: 4px 8px;
+  font-size: 14px;
+  border-radius: 5px;
+}
+.main_button.pink {
+  border: 1px solid var(--pink);
+  background-color: var(--pink);
+}
+@media screen and (min-width: 992px) {
+  .main_button.pink:hover {
+    background-color: transparent;
+  }
+}/*# sourceMappingURL=button.css.map */

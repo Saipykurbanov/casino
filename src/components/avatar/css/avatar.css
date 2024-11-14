@@ -1,0 +1,34 @@
+@charset "UTF-8";
+/*-------------Миксины----------------*/
+.avatar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.avatar .avatar_image {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--blue);
+}
+.avatar .avatar_image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+@media (max-width: 768px) {
+  .avatar .name {
+    font-size: calc(12px + 6.8 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .avatar .name {
+    font-size: calc(12px + 4 * 0.0520833333vw);
+  }
+}/*# sourceMappingURL=avatar.css.map */

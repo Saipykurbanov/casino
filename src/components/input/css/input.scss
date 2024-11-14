@@ -1,0 +1,35 @@
+@import './../../../style/common';
+
+.input_field {
+    width: 100%;
+    label {
+        @include adaptiveFont(14, 12);
+    }
+    input {
+        width: 100%;
+        padding: 10px 15px;
+        @include adaptiveFont(16, 14);
+        background-color: var(--black);
+        color: var(--white);
+        border-radius: 10px;
+    }   
+    .input_wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 15px;
+        background-color: var(--black);
+        border-radius: 10px;
+        gap: 10px;
+        input {
+            padding: 0;
+        }
+        .button_block {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+    }
+}
