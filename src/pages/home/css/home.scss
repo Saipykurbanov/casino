@@ -1,0 +1,135 @@
+@import './../../../style/common';
+
+.home {
+    width: 100%;
+    .home_about {
+        width: 100%;
+        h2 {
+            @include adaptiveFont(30, 24);
+            margin-bottom: 10px;
+        }
+        p {
+            @include adaptiveFont(20, 16);
+            margin-bottom: 20px;
+        }
+    }
+
+    .slider {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        .slide {
+            min-width: 100%;
+            border-radius: 30px;
+            background-color: var(--grey);
+            @include adaptiveProperty(height, 350, 200);
+        }
+        .pagination {
+            position: absolute;
+            bottom: 15px;
+            width: 100%;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            span {
+                width: 15px;
+                height: 15px;
+                border-radius: 50%;
+                border: 1px solid var(--white);
+                transition: 0.4s;
+                cursor: pointer;
+                &.active {
+                    background-color: var(--blue);
+                    border: 1px solid var(--blue);
+                }
+                @include mediaMinWidth(992) {
+                    &:hover {
+                        border: 1px solid var(--blue);
+                    }
+                }
+            }
+        }
+    }
+
+    .games_block {
+        h2 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            @include adaptiveFont(30, 24);
+            margin-bottom: 20px;
+        }
+
+        .games_grid {
+            width: 100%;
+            display: grid;
+            @include adaptiveProperty(grid-auto-rows, 350, 200);
+            @include adaptiveProperty(gap, 20, 10);
+            @include mediaMinWidth(701) {
+                grid-template-areas: 
+                    'a a a b b b'
+                    'c c d d e e'
+                    ;
+            }
+            @include mediaMaxWidth(700) {
+                grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            }
+            .games_grid_item {
+                position: relative;
+                border-radius: 30px;
+                background-color: #363636;
+                @include adaptiveProperty(padding, 25, 15);
+                overflow: hidden;
+                h4 {
+                    position: relative;
+                    font-weight: 600;
+                    @include adaptiveFont(30, 20);
+                    transition: 0.5s;
+                    z-index: 2;
+                }
+                @include mediaMinWidth(701) {
+                    &.a {
+                        grid-area: a;
+                    }
+                    &.b {
+                        grid-area: b;
+                    }
+                    &.c {
+                        grid-area: c;
+                    }
+                    &.d {
+                        grid-area: d;
+                    }
+                    &.e {
+                        grid-area: e;
+                    }
+                }
+                @include mediaMinWidth(992) {
+                    &:hover {
+                        h4 {
+                            color: var(--blue);
+                        }
+                        img {
+                            transform: scale(1.1);
+                        }
+                    }
+                }
+                img {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                    transition: 0.5s;
+                }
+            }
+        }
+    }
+}
