@@ -1,0 +1,53 @@
+@import './../../../style/common';
+
+header {
+    position: fixed;
+    top: 30px;
+    left: 0;
+    width: 100%;
+    .container {
+        padding-top: 0px;
+        padding-bottom: 0px;
+        min-height: auto;
+        .header_wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            background-color: var(--grey);
+            border-radius: 20px;
+            height: 70px;
+            padding: 0px 25px;
+            nav {
+                display: flex;
+                align-items: center;
+                @include adaptiveProperty(gap, 20, 10);
+                .logo {
+                    img {
+                        width: 100px;
+                    }
+                }
+                .link {
+                    @include adaptiveFont(16, 14);
+                    transition: 0.4s;
+                    &.active {
+                        color: var(--blue);
+                    }
+                    @include mediaMinWidth(992) {
+                        &:hover {
+                            color: var(--blue);
+                        }
+                    }
+                    @include mediaMaxWidth(768) {
+                        display: none;
+                    }
+                }
+            }
+            .button_block {
+                display: flex;
+                align-items: center;
+                @include adaptiveProperty(gap, 20, 10);
+            }
+        }
+    }
+}

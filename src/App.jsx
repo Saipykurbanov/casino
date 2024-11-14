@@ -1,4 +1,6 @@
 import { BrowserRouter as Router,  Routes, Route} from 'react-router-dom';
+import Header from './components/header/Header';
+import Sidebar from './components/sidebar/Sidebar';
 
 
 function App() {
@@ -9,6 +11,9 @@ function App() {
       <div className="container">
 
           <Router>
+
+            <Header />
+            <Sidebar />
 
             <Routes>
 
