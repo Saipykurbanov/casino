@@ -5,6 +5,8 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  opacity: 0;
+  animation: Open 0.8s forwards;
 }
 .roulette_page .roulette_head {
   width: 100%;
@@ -347,4 +349,9 @@
   .roulette_page .bet_block .bet_list_block .bet_list .bet_list_item {
     font-size: calc(14px + 2 * 0.0520833333vw);
   }
+}
+.roulette_page .bet_block .bet_list_block .bet_list .bet_list_item .player {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }/*# sourceMappingURL=roulette.css.map */

@@ -15,7 +15,7 @@ const Sidebar = () => {
                         <path id="path" d="M28.91 28.91L9.66 28.91C7.21 28.91 5.99 28.91 5.05 28.43C4.23 28.02 3.56 27.35 3.14 26.52C2.66 25.59 2.66 24.36 2.66 21.91L2.66 2.66M7.04 20.16L12.87 14.33L18.7 20.16L27.45 11.41M21.62 11.41L27.45 11.41L27.45 17.25" stroke="#EEEEEE" strokeOpacity="1.000000" strokeWidth="5.333333" strokeLinejoin="round" strokeLinecap="round"/>
                     </svg>
                 </NavLink>
-                <NavLink to={'hgh'}>
+                <NavLink to={'/roulette'}>
                     <svg width="40px" height="40px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" fill="#eeeeee" stroke="#eeeeee">
 
                         <g id="SVGRepo_bgCarrier" strokeWidth="0"/>
@@ -50,7 +50,7 @@ const Sidebar = () => {
                         </g>
                     </svg>
                 </NavLink>
-                <NavLink to={'d'}>
+                <NavLink to={'/cards'}>
                     <svg fill="#eeeeee" width="40px" height="40px" viewBox="0 0 256 256" id="Flat" xmlns="http://www.w3.org/2000/svg" stroke="#eeeeee">
 
                         <g id="SVGRepo_bgCarrier" strokeWidth="0"/>
