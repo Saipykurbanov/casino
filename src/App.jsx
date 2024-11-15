@@ -1,33 +1,34 @@
 import { BrowserRouter as Router,  Routes, Route} from 'react-router-dom';
+import Header from './components/header/Header';
+import Sidebar from './components/sidebar/Sidebar';
 import Footer from './components/footer/Footer';
-import Roulette from './pages/roulette/Roulette';
+import Home from './pages/home/Home';
+import Crash from './pages/crash/Crash';
 
 
 function App() {
 
   return (
-    <main>
-      
-      <div className="container">
-
-          <Router>
-
-            <Routes>
-
-              <Route path='' element={''}/>
-              <Route path='/roulette' element={<Roulette />}/>
-              <Route path='' element={''}/>
-              <Route path='' element={''}/>
-
-            </Routes>
-
-            <Footer />
+    <>
+        <Router>
+            <Header />
+            <Sidebar />
             
-          </Router>
+            <div className="container">
 
-      </div>
+                <Routes>
 
-    </main>
+                    <Route path='/' element={<Home />}/>
+                    <Route path='/crash' element={<Crash />}/>
+                    <Route path='' element={''}/>
+                    <Route path='' element={''}/>
+
+                </Routes>
+
+                <Footer />
+            </div>
+        </Router>
+    </>
   )
 }
 

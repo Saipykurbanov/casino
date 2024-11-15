@@ -1,25 +1,19 @@
 @import './../../../style/common';
 
 .avatar {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    .avatar_image {
-        position: relative;
-        width: 30px;
-        height: 30px;
-        border: 1px solid var(--blue);
-        img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-        }
-    }
-    .name {
-        @include adaptiveFont(16, 12);
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--blue);
+    border-radius: 50%;
+    overflow: hidden;
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
     }
 }

@@ -54,4 +54,13 @@
   .main_button.pink:hover {
     background-color: transparent;
   }
+}
+.main_button.white {
+  border: 1px solid var(--white);
+  background-color: var(--white);
+}
+@media screen and (min-width: 992px) {
+  .main_button.white:hover {
+    background-color: transparent;
+  }
 }/*# sourceMappingURL=button.css.map */
