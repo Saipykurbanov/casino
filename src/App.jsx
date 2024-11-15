@@ -4,6 +4,7 @@ import Sidebar from './components/sidebar/Sidebar';
 import Footer from './components/footer/Footer';
 import Home from './pages/home/Home';
 import Crash from './pages/crash/Crash';
+import Coins from './pages/coins/Coins';
 
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
 
                     <Route path='/' element={<Home />}/>
                     <Route path='/crash' element={<Crash />}/>
-                    <Route path='' element={''}/>
+                    <Route path='/coins' element={<Coins />}/>
                     <Route path='' element={''}/>
 
                 </Routes>

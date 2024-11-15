@@ -63,4 +63,13 @@
   .main_button.white:hover {
     background-color: transparent;
   }
+}
+.main_button.red {
+  border: 1px solid var(--red);
+  background-color: var(--red);
+}
+@media screen and (min-width: 992px) {
+  .main_button.red:hover {
+    background-color: transparent;
+  }
 }/*# sourceMappingURL=button.css.map */

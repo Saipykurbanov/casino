@@ -1,0 +1,66 @@
+@import './../../../style/common';
+
+.coins {
+    width: 100%;
+    opacity: 0;
+    animation: Open 0.8s forwards;
+    .coins_game {
+        display: flex;
+        gap: 20px;
+        .game_control {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            justify-content: space-between;
+            height: 530px;
+            border-radius: 20px;
+            background-color: var(--grey);
+            @include adaptiveProperty(padding, 25, 15);
+            .game_inputs {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                .input_block {
+                    .control_buttons {
+                        margin-top: 10px;
+                        display: flex;
+                        gap: 5px;
+                    }
+                }
+                .coins_block {
+                    display: flex;
+                    gap: 10px;
+                    .coin_item {
+                        flex: 1;
+                        padding: 10px;
+                        text-align: center;
+                        border: 2px solid var(--black);
+                        border-radius: 10px;
+                        transition: 0.4s;
+                        transform: translate(0px, 0px);
+                        cursor: pointer;
+                        img {
+                            width: 100%;
+                        }
+                        p {
+                            margin-top: 10px;
+                            @include adaptiveFont(20, 14);
+                            font-weight: 600;
+                        }
+                        @include mediaMinWidth(992) {
+                            &:hover {
+                                border-color: var(--blue);
+                            }
+                        }
+                        &.active {
+                            border-color: var(--blue);
+                        }
+                        &:active {
+                            transform: translate(2px, 3px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

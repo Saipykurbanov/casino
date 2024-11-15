@@ -53,4 +53,13 @@
             }
         }
     }
+    &.red {
+        border: 1px solid var(--red);
+        background-color: var(--red);
+        @include mediaMinWidth(992) {
+            &:hover {
+                background-color: transparent;
+            }
+        }
+    }
 }
