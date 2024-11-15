@@ -31,7 +31,8 @@
         gap: 10px;
     }
     &.small {
-        padding: 4px 8px;
+        height: 25px;
+        padding: 0px 10px;
         font-size: 14px;
         border-radius: 5px;
     }
@@ -47,6 +48,15 @@
     &.white {
         border: 1px solid var(--white);
         background-color: var(--white);
+        @include mediaMinWidth(992) {
+            &:hover {
+                background-color: transparent;
+            }
+        }
+    }
+    &.red {
+        border: 1px solid var(--red);
+        background-color: var(--red);
         @include mediaMinWidth(992) {
             &:hover {
                 background-color: transparent;

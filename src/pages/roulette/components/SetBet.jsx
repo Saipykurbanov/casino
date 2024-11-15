@@ -5,7 +5,7 @@ import Button from '../../../components/button/Button';
 const SetBet = () => {
     return (
         <div className="set_bet">
-            <Input label={'Ставка'}/>
+            <Input label={'Ставка'} placeholder={'0,00'}/>
 
             <div className="flex">
                 <Button mode={'fill flex'}>x2</Button>
