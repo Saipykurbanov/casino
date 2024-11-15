@@ -2,6 +2,8 @@
 /*-------------Миксины----------------*/
 .home {
   width: 100%;
+  opacity: 0;
+  animation: Open 0.8s forwards;
 }
 .home .home_about {
   width: 100%;

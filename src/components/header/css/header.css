@@ -5,6 +5,7 @@ header {
   top: 30px;
   left: 0;
   width: 100%;
+  z-index: 200;
 }
 header .container {
   padding-top: 0px;

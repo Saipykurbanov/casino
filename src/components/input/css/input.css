@@ -3,6 +3,10 @@
 .input_field {
   width: 100%;
 }
+.input_field label {
+  margin-bottom: 5px;
+  display: block;
+}
 @media (max-width: 768px) {
   .input_field label {
     font-size: calc(12px + 3.4 * (100vw - 320px) / 1920);
