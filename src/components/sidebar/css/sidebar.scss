@@ -15,6 +15,7 @@
     align-items: center;
     padding: 30px 0px;
     gap: 20px;
+    z-index: 200;
     @include mediaMaxWidth(991) {
         display: none;
     }
@@ -37,6 +38,13 @@
                     }
                 }
             }
+            &.active {
+                svg {
+                    path {
+                        fill: var(--blue);
+                    }
+                }
+            }
             &:nth-child(1) {
                 @include mediaMinWidth(992) {
                     &:hover {
@@ -45,6 +53,14 @@
                                 stroke: var(--blue);
                                 fill: transparent;
                             }
+                        }
+                    }
+                }
+                &.active {
+                    svg {
+                        path {
+                            stroke: var(--blue);
+                            fill: transparent;
                         }
                     }
                 }

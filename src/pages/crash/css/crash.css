@@ -1,0 +1,184 @@
+@charset "UTF-8";
+/*-------------Миксины----------------*/
+.crash {
+  width: 100%;
+  opacity: 0;
+  animation: Open 0.8s forwards;
+}
+.crash .crash_game {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+}
+@media screen and (max-width: 668px) {
+  .crash .crash_game {
+    flex-direction: column-reverse;
+  }
+}
+.crash .crash_game .game_control {
+  flex: 1;
+  border-radius: 20px;
+  background-color: var(--grey);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  height: 440px;
+}
+@media (max-width: 768px) {
+  .crash .crash_game .game_control {
+    padding: calc(15px + 17 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .crash .crash_game .game_control {
+    padding: calc(15px + 10 * 0.0520833333vw);
+  }
+}
+@media screen and (max-width: 1120px) {
+  .crash .crash_game .game_control {
+    height: 330px;
+  }
+}
+.crash .crash_game .game_control .game_inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.crash .crash_game .game_control .game_inputs h2 {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+@media (max-width: 768px) {
+  .crash .crash_game .game_control .game_inputs h2 {
+    font-size: calc(24px + 10.2 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .crash .crash_game .game_control .game_inputs h2 {
+    font-size: calc(24px + 6 * 0.0520833333vw);
+  }
+}
+.crash .crash_game .window {
+  border-radius: 20px;
+  background-color: var(--grey);
+  flex: 1;
+}
+@media (max-width: 768px) {
+  .crash .crash_game .window {
+    padding: calc(15px + 17 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .crash .crash_game .window {
+    padding: calc(15px + 10 * 0.0520833333vw);
+  }
+}
+.crash .crash_game .window .window_wrapper {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background-color: var(--black);
+}
+@media screen and (max-width: 668px) {
+  .crash .crash_game .window .window_wrapper {
+    height: 270px;
+  }
+}
+.crash .users_bets {
+  margin-top: 20px;
+  width: 100%;
+  border-radius: 20px;
+  background-color: var(--grey);
+}
+@media (max-width: 768px) {
+  .crash .users_bets {
+    padding: calc(15px + 17 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .crash .users_bets {
+    padding: calc(15px + 10 * 0.0520833333vw);
+  }
+}
+.crash .users_bets .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  row-gap: 10px;
+}
+@media (max-width: 768px) {
+  .crash .users_bets .header h4 {
+    font-size: calc(14px + 10.2 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .crash .users_bets .header h4 {
+    font-size: calc(14px + 6 * 0.0520833333vw);
+  }
+}
+.crash .users_bets .header .all_bets {
+  display: flex;
+  gap: 5px;
+}
+@media (max-width: 768px) {
+  .crash .users_bets .header .all_bets {
+    font-size: calc(14px + 10.2 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .crash .users_bets .header .all_bets {
+    font-size: calc(14px + 6 * 0.0520833333vw);
+  }
+}
+.crash .users_bets .users_bets_list {
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 200px;
+  overflow: auto;
+  padding-right: 5px;
+}
+.crash .users_bets .users_bets_list::-webkit-scrollbar {
+  width: 5px;
+}
+.crash .users_bets .users_bets_list::-webkit-scrollbar-thumb {
+  background-color: var(--black);
+  border-radius: 10px;
+}
+.crash .users_bets .users_bets_list .user_item {
+  display: grid;
+  grid-template-columns: 30px 1fr auto auto auto;
+  grid-auto-rows: auto;
+  align-items: center;
+  border-bottom: 1px solid var(--black);
+  gap: 10px;
+  padding-bottom: 5px;
+}
+@media (max-width: 768px) {
+  .crash .users_bets .users_bets_list .user_item .name,
+  .crash .users_bets .users_bets_list .user_item .date,
+  .crash .users_bets .users_bets_list .user_item .coef,
+  .crash .users_bets .users_bets_list .user_item .bet {
+    font-size: calc(14px + 10.2 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .crash .users_bets .users_bets_list .user_item .name,
+  .crash .users_bets .users_bets_list .user_item .date,
+  .crash .users_bets .users_bets_list .user_item .coef,
+  .crash .users_bets .users_bets_list .user_item .bet {
+    font-size: calc(14px + 6 * 0.0520833333vw);
+  }
+}
+.crash .users_bets .users_bets_list .user_item .name {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}/*# sourceMappingURL=crash.css.map */

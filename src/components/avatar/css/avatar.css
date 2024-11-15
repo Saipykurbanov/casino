@@ -1,17 +1,14 @@
 @charset "UTF-8";
 /*-------------Миксины----------------*/
 .avatar {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.avatar .avatar_image {
   position: relative;
   width: 30px;
   height: 30px;
   border: 1px solid var(--blue);
+  border-radius: 50%;
+  overflow: hidden;
 }
-.avatar .avatar_image img {
+.avatar img {
   position: absolute;
   top: 0;
   left: 0;
@@ -21,14 +18,4 @@
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
-}
-@media (max-width: 768px) {
-  .avatar .name {
-    font-size: calc(12px + 6.8 * (100vw - 320px) / 1920);
-  }
-}
-@media (min-width: 768px) {
-  .avatar .name {
-    font-size: calc(12px + 4 * 0.0520833333vw);
-  }
 }/*# sourceMappingURL=avatar.css.map */

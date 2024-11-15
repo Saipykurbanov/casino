@@ -3,35 +3,32 @@ import Header from './components/header/Header';
 import Sidebar from './components/sidebar/Sidebar';
 import Footer from './components/footer/Footer';
 import Home from './pages/home/Home';
+import Crash from './pages/crash/Crash';
 
 
 function App() {
 
   return (
-    <main>
-      
-      <div className="container">
-
-          <Router>
+    <>
+        <Router>
             <Header />
             <Sidebar />
-
-            <Routes>
-
-              <Route path='/' element={<Home />}/>
-              <Route path='' element={''}/>
-              <Route path='' element={''}/>
-              <Route path='' element={''}/>
-
-            </Routes>
-
-            <Footer />
             
-          </Router>
+            <div className="container">
 
-      </div>
+                <Routes>
 
-    </main>
+                    <Route path='/' element={<Home />}/>
+                    <Route path='/crash' element={<Crash />}/>
+                    <Route path='' element={''}/>
+                    <Route path='' element={''}/>
+
+                </Routes>
+
+                <Footer />
+            </div>
+        </Router>
+    </>
   )
 }
 

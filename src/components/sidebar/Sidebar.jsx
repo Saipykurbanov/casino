@@ -8,14 +8,14 @@ const Sidebar = () => {
     return (
         <div className='sidebar'>
             <nav>
-                <NavLink to={''}>
+                <NavLink to={'/crash'}>
                     <svg width="31.583313" height="31.583328" viewBox="0 0 31.5833 31.5833" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
                         <defs/>
                         <path id="path" d="M28.89 26.27L28.91 26.25C30.41 26.25 31.58 27.42 31.58 28.91C31.58 30.41 30.41 31.58 28.91 31.58L28.89 31.56L28.89 26.27ZM0.01 2.68L0 2.66C0 1.17 1.17 0 2.66 0C4.16 0 5.33 1.17 5.33 2.66L5.31 2.68L0.01 2.68ZM8.92 22.02L8.92 22.05C7.87 23.1 6.21 23.1 5.15 22.05C4.1 20.99 4.1 19.33 5.15 18.28L5.18 18.28L8.92 22.02ZM30.1 17.23L30.12 17.25C30.12 18.74 28.95 19.91 27.45 19.91C25.96 19.91 24.79 18.74 24.79 17.25L24.81 17.23L30.1 17.23ZM21.64 14.06L21.62 14.08C20.13 14.08 18.95 12.91 18.95 11.41C18.95 9.92 20.13 8.75 21.62 8.75L21.64 8.76L21.64 14.06Z" fill="#000000" fillOpacity="0" fillRule="nonzero"/>
                         <path id="path" d="M28.91 28.91L9.66 28.91C7.21 28.91 5.99 28.91 5.05 28.43C4.23 28.02 3.56 27.35 3.14 26.52C2.66 25.59 2.66 24.36 2.66 21.91L2.66 2.66M7.04 20.16L12.87 14.33L18.7 20.16L27.45 11.41M21.62 11.41L27.45 11.41L27.45 17.25" stroke="#EEEEEE" strokeOpacity="1.000000" strokeWidth="5.333333" strokeLinejoin="round" strokeLinecap="round"/>
                     </svg>
                 </NavLink>
-                <NavLink to={''}>
+                <NavLink to={'hgh'}>
                     <svg width="40px" height="40px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" fill="#eeeeee" stroke="#eeeeee">
 
                         <g id="SVGRepo_bgCarrier" strokeWidth="0"/>
@@ -26,7 +26,7 @@ const Sidebar = () => {
 
                     </svg>
                 </NavLink>
-                <NavLink to={''}>
+                <NavLink to={'g'}>
                     <svg fill="#eeeeee" height="40px" width="40px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 475.996 475.996" xmlSpace="preserve" stroke="#eeeeee">
 
                         <g id="SVGRepo_bgCarrier" strokeWidth="0"/>
@@ -37,7 +37,7 @@ const Sidebar = () => {
 
                     </svg>
                 </NavLink>
-                <NavLink to={''}>
+                <NavLink to={'d'}>
                     <svg width="40.000000" height="40.000000" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
                         <defs>
                             <clipPath id="clip13_138">
@@ -50,7 +50,7 @@ const Sidebar = () => {
                         </g>
                     </svg>
                 </NavLink>
-                <NavLink to={''}>
+                <NavLink to={'d'}>
                     <svg fill="#eeeeee" width="40px" height="40px" viewBox="0 0 256 256" id="Flat" xmlns="http://www.w3.org/2000/svg" stroke="#eeeeee">
 
                         <g id="SVGRepo_bgCarrier" strokeWidth="0"/>

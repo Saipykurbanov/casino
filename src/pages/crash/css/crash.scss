@@ -1,0 +1,119 @@
+@import './../../../style/common';
+
+.crash {
+    width: 100%;
+    opacity: 0;
+    animation: Open 0.8s forwards;
+    .crash_game {
+        width: 100%;
+        display: flex;
+        gap: 20px;
+        @include mediaMaxWidth(668) {
+            flex-direction: column-reverse;
+        }
+        .game_control {
+            flex: 1;
+            border-radius: 20px;
+            background-color: var(--grey);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 20px;
+            height: 440px;
+            @include adaptiveProperty(padding, 25, 15);
+            @include mediaMaxWidth(1120) {
+                height: 330px;
+            }   
+            .game_inputs {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                h2 {
+                    text-transform: uppercase;
+                    font-weight: 600;
+                    @include adaptiveFont(30, 24);
+                }
+            }
+        }
+
+        .window {
+            border-radius: 20px;
+            background-color: var(--grey);
+            flex: 1;
+            @include adaptiveProperty(padding, 25, 15);
+            .window_wrapper {
+                width: 100%;
+                height: 100%;
+                border-radius: 20px;
+                background-color: var(--black);
+                @include mediaMaxWidth(668) {
+                    height: 270px;
+                } 
+            }
+        }
+
+    }
+
+    .users_bets {
+        margin-top: 20px;
+        width: 100%;
+        border-radius: 20px;
+        background-color: var(--grey);
+        @include adaptiveProperty(padding, 25, 15);
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            column-gap: 20px;
+            row-gap: 10px;
+            h4 {
+                @include adaptiveFont(20, 14);
+            }
+            .all_bets {
+                display: flex;
+                gap: 5px;
+                @include adaptiveFont(20, 14);
+            }
+        }
+
+        .users_bets_list {
+            margin-top: 10px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            height: 200px;
+            overflow: auto;
+            padding-right: 5px;
+            &::-webkit-scrollbar {
+                width: 5px;
+            }
+            &::-webkit-scrollbar-thumb {
+                background-color: var(--black);
+                border-radius: 10px;
+            }
+            .user_item {
+                display: grid;
+                grid-template-columns: 30px 1fr auto auto auto;
+                grid-auto-rows: auto;
+                align-items: center;
+                border-bottom: 1px solid var(--black);
+                gap: 10px;
+                padding-bottom: 5px;
+                .name,
+                .date,
+                .coef,
+                .bet {
+                    @include adaptiveFont(20, 14);
+                }
+                .name {
+                    width: 100%;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+            }
+        }
+    }
+}

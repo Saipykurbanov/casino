@@ -1,12 +1,12 @@
 import React from 'react';
+import Api from '../../utils/Api';
+import './css/avatar.css';
 
-const Avatar = ({img, name}) => {
+
+const Avatar = ({img}) => {
     return (
         <div className='avatar'>
-            <div className="avatar_image">
-                <img src={`${Api.url}/images/${img}`} alt="" />
-            </div>
-            <p className="name">{name}</p>
+            <img src={`${Api.url}/images/${img}`} alt="" />
         </div>
     );
 };

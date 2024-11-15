@@ -13,7 +13,7 @@ const Games = () => {
             </h2>
 
             <div className="games_grid">
-                <NavLink to={''} className="games_grid_item a">
+                <NavLink to={'/crash'} className="games_grid_item a">
                     <h4>CRASH</h4>
                     <img src="/images/noimage.png" alt="" />
                 </NavLink>
