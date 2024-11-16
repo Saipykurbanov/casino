@@ -18,7 +18,7 @@ const Games = () => {
                     <img src="/images/noimage.png" alt="" />
                 </NavLink>
 
-                <NavLink to={'/coins'} className="games_grid_item b">
+                <NavLink to={'/slots'} className="games_grid_item b">
                     <h4>СЛОТЫ</h4>
                     <img src="/images/noimage.png" alt="" />
                 </NavLink>
@@ -33,7 +33,7 @@ const Games = () => {
                     <img src="/images/noimage.png" alt="" />
                 </NavLink>
 
-                <NavLink to={''} className="games_grid_item e">
+                <NavLink to={'/coins'} className="games_grid_item e">
                     <h4>МОНЕТКА</h4>
                     <img src="/images/noimage.png" alt="" />
                 </NavLink>
