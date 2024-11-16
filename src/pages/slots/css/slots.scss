@@ -1,0 +1,190 @@
+@import './../../../style/common';
+
+.slots_page {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    opacity: 0;
+    animation: Open 0.8s forwards;
+
+    .slot_game_wrapper {
+        display: flex;
+        flex-wrap: wrap-reverse;
+        gap: 20px;
+
+        .set_bet {
+            flex: 1;
+            width: 100%;
+            min-width: 270px;
+            background-color: var(--grey);
+            border-radius: 20px;
+            @include adaptiveProperty(padding, 25, 15);
+
+            & .bet_controll_btn {
+                margin-bottom: 20px;
+            }
+        }
+
+        .game_wrapper {
+            flex: 2.6;
+            background-color: var(--grey);
+            border-radius: 20px;
+            @include adaptiveProperty(padding, 20, 10);
+            height: 50dvh;
+            min-height: 300px;
+            @include adaptiveProperty(max-height, 540, 250);
+
+            @include mediaMaxWidth(500) {
+                min-height: 250px;
+            }
+
+            .slot_game {
+                height: 100%;
+                width: 100%;
+                background-color: var(--black);
+                border-radius: 10px;
+                display: flex;
+
+                .slot {
+                    position: relative;
+                    flex: 1;
+                    height: 100%;
+                    border-right: 1px solid var(--grey);
+                    overflow: hidden;
+
+                    .slot_track {
+                        position: relative;
+                        display: flex;
+                        flex-direction: column;
+                        // flex-shrink: 0;
+                        height: 100%;
+                        min-width: 77px;
+                        @include mediaMaxWidth (500) {
+                            min-width: 50px;
+                        }
+
+                        .slot_item {
+                            width: 100%;
+                            height: 33%;
+                            min-height: 33%;    
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            @include adaptiveProperty(padding, 10, 6);
+
+                            & img {
+                                width: 100%;
+                                @include adaptiveProperty(max-width, 90, 60);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .slots_game_history {
+        width: 100%;
+        background-color: var(--grey);
+        border-radius: 20px;
+        @include adaptiveProperty(padding-bottom, 25, 15);
+        white-space: nowrap;
+
+        & h2 {
+            @include adaptiveFont(20, 16);
+            font-weight: 600;
+            margin-bottom: 20px;
+            @include adaptiveProperty(padding-left, 25, 15);
+            @include adaptiveProperty(padding-right, 25, 15);
+            @include adaptiveProperty(padding-top, 25, 15);
+        }
+
+        .bet_list_header {
+            width: 100%;
+            @include adaptiveProperty(padding-left, 25, 10);
+            @include adaptiveProperty(padding-right, 25, 10);
+            display: grid;
+            grid-template-columns: minmax(100px, 1fr) minmax(60px, 200px) minmax(100px, 200px) 95px;
+            align-items: center;
+            @include adaptiveFont(16, 12);
+            @include adaptiveProperty(gap, 10, 5);
+            margin-bottom: 10px;
+
+            @include mediaMaxWidth(768) {
+                grid-template-columns: minmax(100px, 1fr) minmax(45px, 1fr) minmax(70px, 1fr);
+            }
+
+            @include mediaMaxWidth(420) {
+                grid-template-columns: minmax(100px, 1fr) minmax(45px, 1fr) minmax(50px, 1fr);
+            }
+
+            .bet {
+                text-align: center;
+            }
+
+            .winning {
+                text-align: center;
+            }
+        }
+
+        .bet_list {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            flex-shrink: 0;
+
+            .bet_list_item {
+                @include adaptiveProperty(padding-left, 25, 10);
+                @include adaptiveProperty(padding-right, 25, 10);
+                border-bottom: 1px solid var(--black);
+                height: 40px;
+                display: grid;
+                grid-template-columns: minmax(100px, 1fr) minmax(60px, 200px) minmax(100px, 200px) 95px;
+                align-items: center;
+                @include adaptiveFont(16, 12);
+                @include adaptiveProperty(gap, 10, 5);
+
+                @include mediaMaxWidth(768) {
+                    grid-template-columns: minmax(100px, 1fr) minmax(45px, 1fr) minmax(70px, 1fr);
+                }
+
+                @include mediaMaxWidth(420) {
+                    grid-template-columns: minmax(100px, 1fr) minmax(45px, 1fr) minmax(50px, 1fr);
+                }
+
+                .player {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    flex-shrink: 0;
+    
+                    .name {
+                        @include adaptiveFont(16, 12);
+                        white-space: nowrap; 
+                        overflow: hidden; 
+                        text-overflow: ellipsis;
+                    }
+                }
+    
+                .bet {
+                    text-align: center;
+                }
+    
+                .winning {
+                    text-align: center;
+                    color: var(--blue);
+                    white-space: nowrap; 
+                    overflow: hidden; 
+                    text-overflow: ellipsis;
+                }
+
+                @include mediaMaxWidth(768) {
+                    .main_button {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

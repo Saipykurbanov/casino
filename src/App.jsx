@@ -8,6 +8,7 @@ import Coins from './pages/coins/Coins';
 import Roulette from './pages/roulette/Roulette';
 import ScrollToTop from './utils/ScrollToTop';
 import Cards from './pages/cards/Cards';
+import Slots from './pages/slots/Slots';
 
 
 function App() {
@@ -23,12 +24,12 @@ function App() {
 
                 <Routes>
 
-                    <Route path='/' element={<Home />}/>
-                    <Route path='/crash' element={<Crash />}/>
-                    <Route path='/coins' element={<Coins />}/>
-                    <Route path='' element={''}/>
+                    <Route path='/'         element={<Home />}/>
+                    <Route path='/crash'    element={<Crash />}/>
                     <Route path='/roulette' element={<Roulette />}/>
-                    <Route path='/cards' element={<Cards />}/>
+                    <Route path='/slots'    element={<Slots />}/>
+                    <Route path='/coins'    element={<Coins />}/>
+                    <Route path='/cards'    element={<Cards />}/>
 
                 </Routes>
 
