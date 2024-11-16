@@ -1,0 +1,82 @@
+@charset "UTF-8";
+/*-------------Миксины----------------*/
+.coins {
+  width: 100%;
+  opacity: 0;
+  animation: Open 0.8s forwards;
+}
+.coins .coins_game {
+  display: flex;
+  gap: 20px;
+}
+.coins .coins_game .game_control {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: space-between;
+  height: 530px;
+  border-radius: 20px;
+  background-color: var(--grey);
+}
+@media (max-width: 768px) {
+  .coins .coins_game .game_control {
+    padding: calc(15px + 17 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .coins .coins_game .game_control {
+    padding: calc(15px + 10 * 0.0520833333vw);
+  }
+}
+.coins .coins_game .game_control .game_inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.coins .coins_game .game_control .game_inputs .input_block .control_buttons {
+  margin-top: 10px;
+  display: flex;
+  gap: 5px;
+}
+.coins .coins_game .game_control .game_inputs .coins_block {
+  display: flex;
+  gap: 10px;
+}
+.coins .coins_game .game_control .game_inputs .coins_block .coin_item {
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+  border: 2px solid var(--black);
+  border-radius: 10px;
+  transition: 0.4s;
+  transform: translate(0px, 0px);
+  cursor: pointer;
+}
+.coins .coins_game .game_control .game_inputs .coins_block .coin_item img {
+  width: 100%;
+}
+.coins .coins_game .game_control .game_inputs .coins_block .coin_item p {
+  margin-top: 10px;
+  font-weight: 600;
+}
+@media (max-width: 768px) {
+  .coins .coins_game .game_control .game_inputs .coins_block .coin_item p {
+    font-size: calc(14px + 10.2 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .coins .coins_game .game_control .game_inputs .coins_block .coin_item p {
+    font-size: calc(14px + 6 * 0.0520833333vw);
+  }
+}
+@media screen and (min-width: 992px) {
+  .coins .coins_game .game_control .game_inputs .coins_block .coin_item:hover {
+    border-color: var(--blue);
+  }
+}
+.coins .coins_game .game_control .game_inputs .coins_block .coin_item.active {
+  border-color: var(--blue);
+}
+.coins .coins_game .game_control .game_inputs .coins_block .coin_item:active {
+  transform: translate(2px, 3px);
+}/*# sourceMappingURL=coins.css.map */
