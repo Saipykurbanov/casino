@@ -23,12 +23,12 @@ const Games = () => {
                     <img src="/images/noimage.png" alt="" />
                 </NavLink>
 
-                <NavLink to={''} className="games_grid_item c">
+                <NavLink to={'/roulette'} className="games_grid_item c">
                     <h4>РУЛЕТКА</h4>
                     <img src="/images/noimage.png" alt="" />
                 </NavLink>
 
-                <NavLink to={''} className="games_grid_item d">
+                <NavLink to={'/cards'} className="games_grid_item d">
                     <h4>КАРТОЧКИ</h4>
                     <img src="/images/noimage.png" alt="" />
                 </NavLink>

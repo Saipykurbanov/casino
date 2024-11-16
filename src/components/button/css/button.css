@@ -42,7 +42,8 @@
   gap: 10px;
 }
 .main_button.small {
-  padding: 4px 8px;
+  height: 25px;
+  padding: 0px 10px;
   font-size: 14px;
   border-radius: 5px;
 }

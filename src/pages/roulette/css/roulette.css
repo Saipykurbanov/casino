@@ -1,0 +1,357 @@
+@charset "UTF-8";
+/*-------------Миксины----------------*/
+.roulette_page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  opacity: 0;
+  animation: Open 0.8s forwards;
+}
+.roulette_page .roulette_head {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+}
+.roulette_page .roulette_head .timer {
+  padding: 0 15px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: var(--grey);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.roulette_page .roulette_head .timer span {
+  display: block;
+  font-weight: 600;
+  color: var(--blue);
+}
+.roulette_page .roulette_head .last {
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  padding: 0 15px;
+  flex: 1;
+  min-height: 40px;
+  background-color: var(--grey);
+  border-radius: 10px;
+  gap: 15px;
+}
+.roulette_page .roulette_head .last .last_container {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex: 1;
+}
+.roulette_page .roulette_head .last .last_container .last_item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  height: 23px;
+  width: 23px;
+  border-radius: 5px;
+  font-size: 12px;
+}
+.roulette_page .roulette_head .last .last_container .last_item.red {
+  background: var(--red-gradient);
+}
+.roulette_page .roulette_head .last .last_container .last_item.green {
+  background: var(--green-gradient);
+}
+.roulette_page .roulette_head .last .last_container .last_item.black {
+  background: var(--black-gradient);
+}
+@media screen and (max-width: 500px) {
+  .roulette_page .roulette_head {
+    flex-direction: column;
+  }
+}
+.roulette_page .roulette_wrapper {
+  padding: 20px;
+  background-color: var(--grey);
+  border-radius: 20px;
+  width: 100%;
+}
+.roulette_page .roulette_wrapper .roulette_game {
+  position: relative;
+  width: 100%;
+  height: 120px;
+  padding: 0 10px;
+  background: var(--black);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.roulette_page .roulette_wrapper .roulette_game .line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100%;
+  width: 1px;
+  background-color: var(--blue);
+}
+.roulette_page .roulette_wrapper .roulette_game .roulette_track {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.roulette_page .roulette_wrapper .roulette_game .roulette_track .roulette_item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  height: 100px;
+  width: 100px;
+  border-radius: 10px;
+  font-size: 40px;
+}
+.roulette_page .roulette_wrapper .roulette_game .roulette_track .roulette_item.red {
+  background: var(--red-gradient);
+}
+.roulette_page .roulette_wrapper .roulette_game .roulette_track .roulette_item.green {
+  background: var(--green-gradient);
+}
+.roulette_page .roulette_wrapper .roulette_game .roulette_track .roulette_item.black {
+  background: var(--black-gradient);
+}
+.roulette_page .set_bet_block {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+}
+.roulette_page .set_bet_block .set_bet,
+.roulette_page .set_bet_block .make_bet {
+  flex: 1;
+  border-radius: 20px;
+  background-color: var(--grey);
+  min-width: 290px;
+}
+@media (max-width: 768px) {
+  .roulette_page .set_bet_block .set_bet,
+  .roulette_page .set_bet_block .make_bet {
+    padding: calc(15px + 17 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .roulette_page .set_bet_block .set_bet,
+  .roulette_page .set_bet_block .make_bet {
+    padding: calc(15px + 10 * 0.0520833333vw);
+  }
+}
+.roulette_page .set_bet_block .set_bet p,
+.roulette_page .set_bet_block .make_bet p {
+  margin-bottom: 3px;
+}
+@media (max-width: 768px) {
+  .roulette_page .set_bet_block .set_bet p,
+  .roulette_page .set_bet_block .make_bet p {
+    font-size: calc(12px + 3.4 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .roulette_page .set_bet_block .set_bet p,
+  .roulette_page .set_bet_block .make_bet p {
+    font-size: calc(12px + 2 * 0.0520833333vw);
+  }
+}
+.roulette_page .set_bet_block .flex {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+.roulette_page .set_bet_block .flex .flex_item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.roulette_page .set_bet_block .flex .flex_item p span {
+  font-weight: 600;
+  color: var(--blue);
+}
+.roulette_page .set_bet_block .flex .main_button {
+  margin-top: 15px;
+  height: 25px;
+  padding: 0 10px;
+}
+.roulette_page .set_bet_block .flex .make_bet_btn {
+  color: var(--white);
+  font-size: 20px;
+  padding: 8px 15px;
+  flex: 1;
+  height: 45px;
+  border-radius: 10px;
+  transition: 0.4s;
+}
+.roulette_page .set_bet_block .flex .make_bet_btn.red {
+  background: var(--red-gradient);
+}
+@media screen and (min-width: 992px) {
+  .roulette_page .set_bet_block .flex .make_bet_btn.red:hover {
+    box-shadow: 0 0 13px 0 var(--red);
+  }
+}
+.roulette_page .set_bet_block .flex .make_bet_btn.green {
+  background: var(--green-gradient);
+}
+@media screen and (min-width: 992px) {
+  .roulette_page .set_bet_block .flex .make_bet_btn.green:hover {
+    box-shadow: 0 0 13px 0 #008143;
+  }
+}
+.roulette_page .set_bet_block .flex .make_bet_btn.black {
+  background: var(--black-gradient);
+}
+@media screen and (min-width: 992px) {
+  .roulette_page .set_bet_block .flex .make_bet_btn.black:hover {
+    box-shadow: 0 0 13px 0 var(--black);
+  }
+}
+.roulette_page .bet_block {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.roulette_page .bet_block .bet_list_block {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  background-color: var(--grey);
+  border-radius: 20px;
+  min-width: 250px;
+}
+@media (max-width: 768px) {
+  .roulette_page .bet_block .bet_list_block {
+    padding-top: calc(15px + 17 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .roulette_page .bet_block .bet_list_block {
+    padding-top: calc(15px + 10 * 0.0520833333vw);
+  }
+}
+@media (max-width: 768px) {
+  .roulette_page .bet_block .bet_list_block {
+    padding-bottom: calc(15px + 17 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .roulette_page .bet_block .bet_list_block {
+    padding-bottom: calc(15px + 10 * 0.0520833333vw);
+  }
+}
+.roulette_page .bet_block .bet_list_block .common_bet {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: space-between;
+}
+@media (max-width: 768px) {
+  .roulette_page .bet_block .bet_list_block .common_bet {
+    padding-left: calc(15px + 17 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .roulette_page .bet_block .bet_list_block .common_bet {
+    padding-left: calc(15px + 10 * 0.0520833333vw);
+  }
+}
+@media (max-width: 768px) {
+  .roulette_page .bet_block .bet_list_block .common_bet {
+    padding-right: calc(15px + 17 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .roulette_page .bet_block .bet_list_block .common_bet {
+    padding-right: calc(15px + 10 * 0.0520833333vw);
+  }
+}
+.roulette_page .bet_block .bet_list_block .common_bet .bet {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.roulette_page .bet_block .bet_list_block .make_bet_btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 150px;
+  color: var(--white);
+  font-size: 20px;
+  padding: 8px 15px;
+  flex: 1;
+  min-height: 45px;
+  border-radius: 10px;
+}
+@media (max-width: 768px) {
+  .roulette_page .bet_block .bet_list_block .make_bet_btn {
+    margin-left: calc(15px + 17 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .roulette_page .bet_block .bet_list_block .make_bet_btn {
+    margin-left: calc(15px + 10 * 0.0520833333vw);
+  }
+}
+@media (max-width: 768px) {
+  .roulette_page .bet_block .bet_list_block .make_bet_btn {
+    margin-right: calc(15px + 17 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .roulette_page .bet_block .bet_list_block .make_bet_btn {
+    margin-right: calc(15px + 10 * 0.0520833333vw);
+  }
+}
+.roulette_page .bet_block .bet_list_block .make_bet_btn.red {
+  background: var(--red-gradient);
+}
+.roulette_page .bet_block .bet_list_block .make_bet_btn.green {
+  background: var(--green-gradient);
+}
+.roulette_page .bet_block .bet_list_block .make_bet_btn.black {
+  background: var(--black-gradient);
+}
+.roulette_page .bet_block .bet_list_block .bet_list {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  border-top: 1px solid var(--black);
+  width: 100%;
+}
+.roulette_page .bet_block .bet_list_block .bet_list .bet_list_item {
+  padding: 0 20px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  height: 40px;
+  border-bottom: 1px solid var(--black);
+}
+@media (max-width: 768px) {
+  .roulette_page .bet_block .bet_list_block .bet_list .bet_list_item {
+    font-size: calc(14px + 3.4 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .roulette_page .bet_block .bet_list_block .bet_list .bet_list_item {
+    font-size: calc(14px + 2 * 0.0520833333vw);
+  }
+}
+.roulette_page .bet_block .bet_list_block .bet_list .bet_list_item .player {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}/*# sourceMappingURL=roulette.css.map */

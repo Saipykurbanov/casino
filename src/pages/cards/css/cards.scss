@@ -1,0 +1,199 @@
+@import './../../../style/common';
+
+.cards_page {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    opacity: 0;
+    animation: Open 0.8s forwards;
+
+    .card_game_wrapper {
+        display: flex;
+        flex-wrap: wrap-reverse;
+        gap: 20px;
+
+        .set_bet {
+            flex: 1;
+            width: 100%;
+            min-width: 270px;
+            background-color: var(--grey);
+            border-radius: 20px;
+            @include adaptiveProperty(padding, 25, 15);
+            
+            & h3 {
+                margin-top: 20px;
+                margin-bottom: 5px;
+                @include adaptiveFont(14, 12);
+            }
+
+            .possible_flex {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 20px;
+
+                .possible_item {
+                    flex: 1;
+                    background-color: var(--black);
+                    border-radius: 10px;
+                    padding: 10px 15px;
+                    @include adaptiveFont(16, 14);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 16px;
+                }
+            }
+        }
+
+        .card_game {
+            flex: 2.6;
+            background-color: var(--grey);
+            border-radius: 20px;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(160px, 1fr));
+            @include adaptiveProperty(padding, 25, 10);
+            @include adaptiveProperty(gap, 20, 5);
+
+            @include mediaMaxWidth(600) {
+                grid-template-columns: repeat(3, minmax(80px, 1fr));
+            }
+
+            .card_item {
+                // padding: 20px;
+                // height: 143px;
+                // display: flex;
+                // align-items: center;
+                // justify-content: center;
+                // border-radius: 10px;
+                // @include adaptiveFont(45, 30);
+                // background-color: var(--blue);
+                box-shadow: 0px 0px 33px 3px rgba(58, 181, 206, 0.25);
+                width: 100%;
+                height: auto;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .card_game_history {
+        width: 100%;
+        background-color: var(--grey);
+        border-radius: 20px;
+        @include adaptiveProperty(padding-bottom, 25, 15);
+        white-space: nowrap;
+
+        & h2 {
+            @include adaptiveFont(20, 16);
+            font-weight: 600;
+            margin-bottom: 20px;
+            @include adaptiveProperty(padding-left, 25, 15);
+            @include adaptiveProperty(padding-right, 25, 15);
+            @include adaptiveProperty(padding-top, 25, 15);
+        }
+
+        .bet_list_header {
+            width: 100%;
+            @include adaptiveProperty(padding-left, 25, 10);
+            @include adaptiveProperty(padding-right, 25, 10);
+            display: grid;
+            grid-template-columns: minmax(100px, 1fr) minmax(60px, 1fr) minmax(172px, 1fr) minmax(100px, 1fr) 95px;
+            align-items: center;
+            @include adaptiveFont(16, 12);
+            @include adaptiveProperty(gap, 10, 5);
+            margin-bottom: 10px;
+
+            @include mediaMaxWidth(768) {
+                grid-template-columns: minmax(100px, 1fr) minmax(45px, 1fr) minmax(125px, 1fr) minmax(70px, 1fr);
+            }
+
+            @include mediaMaxWidth(420) {
+                grid-template-columns: minmax(100px, 1fr) minmax(45px, 1fr) minmax(50px, 1fr);
+            }
+
+            .bet {
+                text-align: center;
+            }
+
+            .possible_winning {
+                text-align: center;
+
+                @include mediaMaxWidth(420) {
+                    display: none;
+                }
+            }
+
+            .winning {
+                text-align: center;
+            }
+        }
+
+        .bet_list {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            flex-shrink: 0;
+            
+            .bet_list_item {
+                @include adaptiveProperty(padding-left, 25, 10);
+                @include adaptiveProperty(padding-right, 25, 10);
+                border-bottom: 1px solid var(--black);
+                height: 40px;
+                display: grid;
+                grid-template-columns: minmax(100px, 1fr) minmax(60px, 1fr) minmax(172px, 1fr) minmax(100px, 1fr) 95px;
+                align-items: center;
+                @include adaptiveFont(16, 12);
+                @include adaptiveProperty(gap, 10, 5);
+
+                @include mediaMaxWidth(768) {
+                    grid-template-columns: minmax(100px, 1fr) minmax(45px, 1fr) minmax(125px, 1fr) minmax(70px, 1fr);
+                }
+
+                @include mediaMaxWidth(420) {
+                    grid-template-columns: minmax(100px, 1fr) minmax(45px, 1fr) minmax(50px, 1fr);
+                }
+
+                .player {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    flex-shrink: 0;
+    
+                    .name {
+                        @include adaptiveFont(16, 12);
+                        white-space: nowrap; 
+                        overflow: hidden; 
+                        text-overflow: ellipsis;
+                    }
+                }
+    
+                .bet {
+                    text-align: center;
+                }
+    
+                .possible_winning {
+                    text-align: center;
+
+                    @include mediaMaxWidth(420) {
+                        display: none;
+                    }
+                }
+    
+                .winning {
+                    text-align: center;
+                    color: var(--blue);
+                    white-space: nowrap; 
+                    overflow: hidden; 
+                    text-overflow: ellipsis;
+                }
+
+                @include mediaMaxWidth(768) {
+                    .main_button {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
