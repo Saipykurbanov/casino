@@ -7,12 +7,14 @@
     .coins_game {
         display: flex;
         gap: 20px;
+        @include mediaMaxWidth(1150) {
+            flex-direction: column-reverse;
+        }
         .game_control {
             display: flex;
             flex-direction: column;
             gap: 20px;
             justify-content: space-between;
-            height: 530px;
             border-radius: 20px;
             background-color: var(--grey);
             @include adaptiveProperty(padding, 25, 15);
@@ -29,6 +31,7 @@
                 }
                 .coins_block {
                     display: flex;
+                    justify-content: center;
                     gap: 10px;
                     .coin_item {
                         flex: 1;
@@ -38,6 +41,7 @@
                         border-radius: 10px;
                         transition: 0.4s;
                         transform: translate(0px, 0px);
+                        max-width: 130px;
                         cursor: pointer;
                         img {
                             width: 100%;
@@ -59,6 +63,157 @@
                             transform: translate(2px, 3px);
                         }
                     }
+                }
+            }
+        }
+
+        .window {
+            flex: 5;
+            border-radius: 20px;
+            background-color: var(--grey);
+            @include adaptiveProperty(padding, 25, 15);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            .game_process {
+                border-radius: 20px;
+                border: 10px solid var(--blue);
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                gap: 10px;
+                padding: 0 10px;
+                @include adaptiveProperty(padding-top, 90, 60);
+                @include adaptiveProperty(padding-bottom, 90, 60);
+                .coins_info {
+                    text-align: center;
+                    .number {
+                        @include adaptiveFont(80, 20);
+                    }
+                    p {
+                        @include adaptiveFont(20, 14);
+                    }
+                }
+                .coin {
+                    
+                    @include adaptiveProperty(max-width, 180, 110);
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+
+            .coef_list {
+                display: grid;
+                grid-template-columns: repeat(10, 1fr);
+                border-radius: 20px;
+                background-color: var(--black);
+                gap: 5px;
+                @include adaptiveProperty(padding, 15, 10);
+                @include mediaMaxWidth(556) {
+                    grid-template-columns: repeat(5, 1fr);
+                }
+                .coef_item {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 5px;
+                    .coef_avatar {
+                        border-radius: 50%;
+                        border: 2px solid var(--blue);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        @include adaptiveProperty(width, 40, 35);
+                        @include adaptiveProperty(height, 40, 35);
+                    }
+                    p {
+                        @include adaptiveFont(16, 12);
+                    }
+                }
+            }
+        }
+    }
+
+    .coins_history {
+        margin-top: 20px;
+        border-radius: 20px;
+        background-color: var(--grey);
+        @include adaptiveProperty(padding, 25, 15);
+        h3 {
+            @include adaptiveFont(20, 16);
+        }
+        .hostory_list {
+            display: flex;
+            flex-direction: column;
+            margin-top: 10px;
+            gap: 10px;
+            height: 200px;
+            overflow: auto;
+            padding-right: 5px;
+            @include adaptiveFont(16, 12);
+            &::-webkit-scrollbar {
+                width: 5px;
+            }
+            &::-webkit-scrollbar-thumb {
+                background-color: var(--black);
+                border-radius: 10px;
+            }
+            .history_item {
+                display: grid;
+                grid-template-columns: minmax(100px, 1fr) minmax(50px, 1fr) minmax(100px, 1fr) minmax(100px, 1fr) minmax(100px, 1fr) minmax(100px, 1fr);
+                grid-auto-rows: auto;
+                align-items: center;
+                gap: 5px;
+                padding-bottom: 5px;
+                border-bottom: 1px solid var(--black);
+                @include mediaMaxWidth(768) {
+                    grid-template-columns: minmax(100px, 1fr) minmax(50px, 1fr) minmax(50px, 1fr) minmax(50px, 1fr) minmax(50px, 1fr);    
+                    button {
+                        display: none;
+                    }
+                }
+                @include mediaMaxWidth(500) {
+                    grid-template-columns: minmax(100px, 1fr) minmax(50px, 1fr) minmax(50px, 1fr) minmax(50px, 1fr);    
+                    .coef {
+                        display: none;
+                    }
+                }
+                @include mediaMaxWidth(400) {
+                    grid-template-columns: minmax(100px, 1fr) minmax(50px, 1fr) minmax(50px, 1fr);    
+                    .hit {
+                        display: none;
+                    }
+                }
+                &.head {
+                    border-bottom: 0;
+                }
+                .player {
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+                    flex-shrink: 0;
+                    .avatar {
+                        min-width: 30px;
+                    }
+                    .name {
+                        width: 100%;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                    }
+                }
+                .bet,
+                .hit,
+                .coef,
+                .win {
+                    text-align: center;
+                }
+                button {
+                    margin-left: auto;
+                }
+                .win.sum {
+                    color: var(--blue);
                 }
             }
         }

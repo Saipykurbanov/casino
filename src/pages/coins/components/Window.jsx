@@ -1,9 +1,34 @@
 import React from 'react';
+import CoefListItem from './CoefListItem';
 
 const Window = () => {
+
+    const coef_list = ['1.9', '3.8', '7.6', '15.2', '30.4', '60.8', '121.6', '243.2', '484.4', '972.8']
+
     return (
-        <div>
-            
+        <div className='window'>
+
+            <div className="game_process">
+                <div className="coins_info">
+                    <div className="number">0</div>
+                    <p>Раунд</p>
+                </div>
+                <div className="coin">
+                    <img src="/images/up_big.png" alt="" />
+                </div>
+                <div className="coins_info">
+                    <div className="number">x0</div>
+                    <p>Коэфф.</p>
+                </div>
+            </div>
+
+            <div className="coef_list">
+
+                {coef_list.map((el, i) => (
+                    <CoefListItem key={i} number={el}/>
+                ))}
+
+            </div>
         </div>
     );
 };
