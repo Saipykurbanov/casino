@@ -16,6 +16,21 @@
   padding: 30px 0px;
   gap: 20px;
   z-index: 200;
+  transition: 0.4s;
+}
+.sidebar .sidebar_btn svg {
+  transform: rotateY(180deg);
+  transform-origin: center;
+  transition: 0.4s;
+}
+.sidebar.close {
+  transform: translateX(-95px);
+}
+.sidebar.close .sidebar_btn {
+  transform: translateX(60px);
+}
+.sidebar.close .sidebar_btn svg {
+  transform: rotateY(0deg);
 }
 @media screen and (max-width: 991px) {
   .sidebar {
