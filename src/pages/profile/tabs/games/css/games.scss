@@ -1,0 +1,201 @@
+@import './../../../../../style/common';
+
+.common_wrapper.game_history {
+    height: 100%;
+
+    .games_header {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: space-evenly;
+        margin-bottom: 20px;
+        @include adaptiveProperty(padding-left, 25, 15);
+        @include adaptiveProperty(padding-right, 25, 15);
+
+        & a.games_header_item {
+            transition: 0.4s;
+
+            &.active {
+                color: var(--blue);
+            }
+            @include mediaMinWidth(992) {
+                &:hover {
+                    color: var(--blue);
+                }
+            }
+        }
+    }
+
+    .game_history_container {
+        opacity: 0;
+        animation: Open 0.8s forwards;
+        width: 100%;
+        height: 100%;
+
+        .history_header {
+            width: 100%;
+            display: grid;
+            gap: 10px;
+            @include adaptiveFont(14, 12);
+            @include adaptiveProperty(padding-left, 25, 15);
+            @include adaptiveProperty(padding-right, 25, 15);
+
+            &.crash {
+                grid-template-columns: repeat(3, 1fr);
+
+                .coef,
+                .winning {
+                    text-align: center;
+                }
+            }
+
+            &.cards {
+                grid-template-columns: repeat(3, 1fr);
+
+                .provably_winning, 
+                .winning {
+                    text-align: center;
+                }
+            }
+            
+            &.monet {
+                grid-template-columns: repeat(4, 1fr);
+
+                .hit,
+                .coef,
+                .winning {
+                    text-align: center;
+                }
+            }
+
+            &.slots {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            &.roulette {
+                grid-template-columns: repeat(3, 1fr);
+
+                .color,
+                .winning {
+                    text-align: center;
+                }
+            }
+        }
+
+        .history_list {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            flex-shrink: 0;
+
+            .history_list_item {
+                width: 100%;
+                display: grid;
+                align-items: center;
+                gap: 10px;
+                height: 40px;
+                border-bottom: 1px solid var(--black);
+                @include adaptiveFont(14, 12);
+                @include adaptiveProperty(padding-left, 25, 15);
+                @include adaptiveProperty(padding-right, 25, 15);
+
+                &.crash {
+                    grid-template-columns: repeat(3, 1fr);
+
+                    .coef,
+                    .winning {
+                        text-align: center;
+                    }
+                    .winning {
+                        color: var(--blue);
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                    }
+                }
+
+                &.cards {
+                    grid-template-columns: repeat(3, 1fr);
+
+                    .provably_winning, 
+                    .winning {
+                        text-align: center;
+                    }
+    
+                    .winning {
+                        color: var(--blue);
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                    }
+                }
+
+                &.monet {
+                    grid-template-columns: repeat(4, 1fr);
+    
+                    .hit,
+                    .coef,
+                    .winning {
+                        text-align: center;
+                    }
+
+                    .winning {
+                        color: var(--blue);
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                    }
+                }
+
+                &.slots {
+                    grid-template-columns: 1fr 1fr;
+
+                    .winning {
+                        color: var(--blue);
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                    }
+                }
+
+                &.roulette {
+                    grid-template-columns: repeat(3, 1fr);
+
+                    .color {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 5px;
+
+                        .color_item {
+                            @include adaptiveProperty(width, 23, 20);
+                            @include adaptiveProperty(height, 23, 20);
+                            font-size: 12px;    
+                            border-radius: 5px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+
+                            &.green {
+                                background: var(--green-gradient);
+                            }
+
+                            &.red {
+                                background: var(--red-gradient);
+                            }
+
+                            &.black {
+                                background: var(--black-gradient);
+                            }
+                        }
+                    }
+
+                    .winning {
+                        text-align: center;
+                        color: var(--blue);
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                    }
+                }
+            }
+        }
+    }
+}

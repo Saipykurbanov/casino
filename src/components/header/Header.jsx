@@ -21,7 +21,7 @@ const Header = () => {
                             <img src="/images/LOGO.svg" alt="" />
                         </NavLink>
                         <NavLink to={'/'} className="link">Игры</NavLink>
-                        <NavLink to={'/sdsd'} className="link">Рефералы</NavLink>
+                        <NavLink to={'/profile/games/'} className="link">Рефералы</NavLink>
                         <NavLink to={'/sdsd'} className="link">Промоакции</NavLink>
                     </nav>
                     <div className="button_block">
