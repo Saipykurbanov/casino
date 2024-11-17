@@ -6,6 +6,9 @@ import Games from './components/Games';
 
 
 const Home = () => {
+
+    
+
     return (
         <div className='home'>
 
