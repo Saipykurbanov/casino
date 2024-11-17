@@ -3,7 +3,7 @@ import Button from '../../../components/button/Button';
 import InputWithBtn from '../../../components/input/InputWithBtn';
 import Input from '../../../components/input/Input';
 
-const GameControl = () => {
+const GameControl = ({toggle}) => {
     return (
         <div className='game_control'>
             <div className="game_inputs">
@@ -12,7 +12,7 @@ const GameControl = () => {
                 <Input label={'Коэффициент'} placeholder={'0.00'}/>
             </div>
 
-            <Button mode={'full fill'}>
+            <Button mode={'full fill'} callback={toggle}>
                 ИГРАТЬ
             </Button>
         </div>

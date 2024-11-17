@@ -57,12 +57,51 @@
                     left: 50%;
                     transform: translate(-50%, 65px);
                     z-index: 4;
+                    transition: 1s cubic-bezier(0.42, 0, 1, 1);
+                    &.play {
+                        transform: translate(-50%, -50px);
+                    }
+                    .rocket_img {
+                        position: relative;
+                        z-index: 2;
+                    }
+                    .fire {
+                        position: absolute;
+                        bottom: 0;
+                        left: 50%;
+                        transform: translate(-50%, -10px) rotate(180deg) scale(0);
+                        width: 50px;
+                        z-index: 1;
+                        transition: 1s;
+                        transition-delay: 0s;
+                        &.play {
+                            transition-delay: 0.4s;
+                            transform: translate(-50%, -10px) rotate(180deg) scale(1);
+                        }
+                    }
                 }
                 .coef {
                     position: absolute;
                     bottom: 20px;
                     right: 20px;
                     @include adaptiveFont(50, 20);
+                }
+                .sky {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    transform: translateY(-100%);
+                    transition: 1s transform 1s, 1s opacity;
+                    opacity: 0;
+                    img {
+                        width: 100%;
+                        opacity: 0.8;
+                    }
+                    &.play {
+                        transition: 50s transform 0s cubic-bezier(.44,.45,1,-0.03), 2s opacity;
+                        transform: translateY(0);
+                        opacity: 1;
+                    }
                 }
             }
         }
