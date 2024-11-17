@@ -1,0 +1,72 @@
+@charset "UTF-8";
+/*-------------Миксины----------------*/
+.main_loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  background-color: var(--black);
+  gap: 40px;
+  transition: 1.2s;
+}
+.main_loading.close {
+  transform: translateY(-100%);
+}
+@media (max-width: 768px) {
+  .main_loading img {
+    width: calc(100px + 238 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .main_loading img {
+    width: calc(100px + 140 * 0.0520833333vw);
+  }
+}
+.main_loading .spinner {
+  position: relative;
+  padding: 6px;
+  background: var(--blue-pink);
+  border-radius: 50%;
+  animation: MainLoad 0.6s infinite linear;
+}
+@media (max-width: 768px) {
+  .main_loading .spinner {
+    width: calc(50px + 51 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .main_loading .spinner {
+    width: calc(50px + 30 * 0.0520833333vw);
+  }
+}
+@media (max-width: 768px) {
+  .main_loading .spinner {
+    height: calc(50px + 51 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .main_loading .spinner {
+    height: calc(50px + 30 * 0.0520833333vw);
+  }
+}
+.main_loading .spinner .inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--black);
+}
+
+@keyframes MainLoad {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}/*# sourceMappingURL=loading.css.map */

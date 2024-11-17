@@ -16,6 +16,23 @@
     padding: 30px 0px;
     gap: 20px;
     z-index: 200;
+    transition: 0.4s;
+    .sidebar_btn {
+        svg {
+            transform: rotateY(180deg);
+            transform-origin: center;
+            transition: 0.4s;
+        }
+    }
+    &.close {
+        transform: translateX(-95px);
+        .sidebar_btn {
+            transform: translateX(60px);
+            svg {
+                transform: rotateY(0deg);
+            }
+        }
+    }
     @include mediaMaxWidth(991) {
         display: none;
     }

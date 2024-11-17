@@ -116,3 +116,21 @@ input:-webkit-autofill:focus {
         opacity: 100%;
     }
 }
+
+@keyframes OpenModal {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes CloseModal {
+    0%  {
+        transform: translateY((0));
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}

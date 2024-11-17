@@ -10,35 +10,48 @@ import ScrollToTop from './utils/ScrollToTop';
 import Cards from './pages/cards/Cards';
 import Slots from './pages/slots/Slots';
 import Profile from './pages/profile/Profile';
+import NotFound from './pages/not_found/NotFound';
+import MainLoading from './components/loading/MainLoading';
+import { useState } from 'react';
+import useApp from './useApp';
+import SignIn from './modals/sign_in/SingIn';
 
 
 function App() {
 
-  return (
-    <>
-        <Router>
-            <Header />
-            <Sidebar />
-            <ScrollToTop />
-            
-            <div className="container">
+    const main = useApp()
 
-                <Routes>
+    return (
+        <>
+            <Router>
+                <Header />
+                <Sidebar />
+                <ScrollToTop />
 
-                    <Route path='/'         element={<Home />}/>
-                    <Route path='/crash'    element={<Crash />}/>
-                    <Route path='/roulette' element={<Roulette />}/>
-                    <Route path='/slots'    element={<Slots />}/>
-                    <Route path='/coins'    element={<Coins />}/>
-                    <Route path='/cards'    element={<Cards />}/>
-                    <Route path='/profile/*'  element={<Profile />}/>
+                <MainLoading load={main.load}/>
 
-                </Routes>
+                {/* Модальные окна */}
+                <SignIn />
+                
+                <div className="container">
 
-                <Footer />
-            </div>
-        </Router>
-    </>
+                    <Routes>
+
+                        <Route path='/'         element={<Home />}/>
+                        <Route path='/crash'    element={<Crash />}/>
+                        <Route path='/roulette' element={<Roulette />}/>
+                        <Route path='/slots'    element={<Slots />}/>
+                        <Route path='/coins'    element={<Coins />}/>
+                        <Route path='/cards'    element={<Cards />}/>
+                        <Route path='/profile/*'  element={<Profile />}/>
+                        <Route path='*'    element={<NotFound />}/>
+
+                    </Routes>
+
+                    <Footer />
+                </div>
+            </Router>
+        </>
   )
 }
 

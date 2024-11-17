@@ -2,11 +2,15 @@ import React from 'react';
 import './css/sidebar.css';
 import { NavLink } from 'react-router-dom';
 import Button from '../button/Button';
+import useSidebar from './hooks/useSidebar';
 
 
 const Sidebar = () => {
+
+    const sidebar = useSidebar()
+
     return (
-        <div className='sidebar'>
+        <div className={`sidebar ${sidebar.isOpen}`}>
             <nav>
                 <NavLink to={'/crash'}>
                     <svg width="31.583313" height="31.583328" viewBox="0 0 31.5833 31.5833" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
@@ -61,7 +65,7 @@ const Sidebar = () => {
                     </svg>
                 </NavLink>
             </nav>
-            <Button mode={'white flex'}>
+            <Button mode={'white flex sidebar_btn'} callback={sidebar.toggle}>
                 <svg width="20px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 
                     <g id="SVGRepo_bgCarrier" strokeWidth="0"/>
