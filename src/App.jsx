@@ -9,6 +9,7 @@ import Roulette from './pages/roulette/Roulette';
 import ScrollToTop from './utils/ScrollToTop';
 import Cards from './pages/cards/Cards';
 import Slots from './pages/slots/Slots';
+import Profile from './pages/profile/Profile';
 import NotFound from './pages/not_found/NotFound';
 import MainLoading from './components/loading/MainLoading';
 import { useState } from 'react';
@@ -42,6 +43,7 @@ function App() {
                         <Route path='/slots'    element={<Slots />}/>
                         <Route path='/coins'    element={<Coins />}/>
                         <Route path='/cards'    element={<Cards />}/>
+                        <Route path='/profile/*'  element={<Profile />}/>
                         <Route path='*'         element={<NotFound />}/>
 
                     </Routes>
