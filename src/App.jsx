@@ -44,7 +44,7 @@ function App() {
                         <Route path='/coins'    element={<Coins />}/>
                         <Route path='/cards'    element={<Cards />}/>
                         <Route path='/profile/*'  element={<Profile />}/>
-                        <Route path='*'    element={<NotFound />}/>
+                        <Route path='*'         element={<NotFound />}/>
 
                     </Routes>
 

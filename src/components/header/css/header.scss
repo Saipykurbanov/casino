@@ -31,6 +31,7 @@ header {
                 .link {
                     @include adaptiveFont(16, 14);
                     transition: 0.4s;
+                    cursor: pointer;
                     &.active {
                         color: var(--blue);
                     }
@@ -41,6 +42,102 @@ header {
                     }
                     @include mediaMaxWidth(768) {
                         display: none;
+                    }
+                    &.games {
+                        position: relative;
+                        .games_btn {
+                            display: flex;
+                            align-content: center;
+                            gap: 5px;
+                            span {
+                                display: block;
+                                position: relative;
+                                transform: rotate(90deg);
+                            }
+                        }
+                        .game_list_wrapper {
+                            left: 50%;
+                            bottom: 0;
+                            position: absolute;
+                            transform: translate(-50%, calc(100% + 0px));
+                            box-shadow: 2px 2px 20px rgba($color: #000000, $alpha: 0.5);
+                            border-radius: 10px;
+                            background-color: var(--black);
+                            overflow: hidden;
+                            height: 0;
+                            transition: 0.3s;
+                            transition-delay: 0.3s;
+                            &.open {
+                                height: 170px;
+                                transition-delay: 0s;
+                                .games_list {
+                                    transition-delay: 0.3s;
+                                    opacity: 1;
+                                }
+                            }
+                            .games_list {
+                                display: flex;
+                                flex-direction: column;
+                                gap: 10px;
+                                padding: 10px;
+                                transition: 0.3s;
+                                transition-delay: 0s;
+                                opacity: 0;
+                                a {
+                                    display: flex;
+                                    gap: 5px;
+                                    align-items: center;
+                                    transition: 0.4s;
+                                    &.active {
+                                        color: var(--blue);
+                                        svg {
+                                            path {
+                                                fill: var(--blue);
+                                            }
+                                        }
+                                    }
+                                    @include mediaMinWidth(992) {
+                                        &:hover {
+                                            color: var(--blue);
+                                        }
+                                    }
+                                    svg {
+                                        path {
+                                            transition: 0.4s;
+                                        }
+                                    }
+                                    @include mediaMinWidth(992) {
+                                        &:hover {
+                                            svg {
+                                                path {
+                                                    fill: var(--blue);
+                                                }
+                                            }
+                                        }
+                                    }
+                                    &:nth-child(1) {
+                                        @include mediaMinWidth(992) {
+                                            &:hover {
+                                                svg {
+                                                    path {
+                                                        stroke: var(--blue);
+                                                        fill: transparent;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        &.active {
+                                            svg {
+                                                path {
+                                                    stroke: var(--blue);
+                                                    fill: transparent;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
