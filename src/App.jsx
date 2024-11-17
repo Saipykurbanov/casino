@@ -9,6 +9,7 @@ import Roulette from './pages/roulette/Roulette';
 import ScrollToTop from './utils/ScrollToTop';
 import Cards from './pages/cards/Cards';
 import Slots from './pages/slots/Slots';
+import Profile from './pages/profile/Profile';
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
                     <Route path='/slots'    element={<Slots />}/>
                     <Route path='/coins'    element={<Coins />}/>
                     <Route path='/cards'    element={<Cards />}/>
+                    <Route path='/profile/*'  element={<Profile />}/>
 
                 </Routes>
 

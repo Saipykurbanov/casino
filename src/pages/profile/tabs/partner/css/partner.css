@@ -1,0 +1,246 @@
+@charset "UTF-8";
+/*-------------Миксины----------------*/
+@media (max-width: 768px) {
+  .common_wrapper.partner {
+    padding-top: calc(15px + 17 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .common_wrapper.partner {
+    padding-top: calc(15px + 10 * 0.0520833333vw);
+  }
+}
+@media (max-width: 768px) {
+  .common_wrapper.partner {
+    padding-bottom: calc(15px + 17 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .common_wrapper.partner {
+    padding-bottom: calc(15px + 10 * 0.0520833333vw);
+  }
+}
+.common_wrapper.partner:nth-child(1) {
+  margin-bottom: 20px;
+}
+@media (max-width: 768px) {
+  .common_wrapper.partner:nth-child(1) {
+    padding-left: calc(15px + 17 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .common_wrapper.partner:nth-child(1) {
+    padding-left: calc(15px + 10 * 0.0520833333vw);
+  }
+}
+@media (max-width: 768px) {
+  .common_wrapper.partner:nth-child(1) {
+    padding-right: calc(15px + 17 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .common_wrapper.partner:nth-child(1) {
+    padding-right: calc(15px + 10 * 0.0520833333vw);
+  }
+}
+.common_wrapper.partner p {
+  width: 100%;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 20px;
+}
+@media (max-width: 768px) {
+  .common_wrapper.partner p {
+    font-size: calc(16px + 3.4 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .common_wrapper.partner p {
+    font-size: calc(16px + 2 * 0.0520833333vw);
+  }
+}
+.common_wrapper.partner p span {
+  color: var(--blue);
+}
+.common_wrapper.partner .link {
+  width: 100%;
+  height: 40px;
+  border-radius: 10px;
+  background-color: var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.common_wrapper.partner .link a {
+  transition: 0.4s;
+}
+@media (max-width: 768px) {
+  .common_wrapper.partner .link a {
+    font-size: calc(14px + 3.4 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .common_wrapper.partner .link a {
+    font-size: calc(14px + 2 * 0.0520833333vw);
+  }
+}
+@media screen and (min-width: 992px) {
+  .common_wrapper.partner .link a:hover {
+    color: var(--blue);
+  }
+}
+.common_wrapper.partner h3 {
+  margin-bottom: 6px;
+}
+@media (max-width: 768px) {
+  .common_wrapper.partner h3 {
+    padding-left: calc(15px + 17 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .common_wrapper.partner h3 {
+    padding-left: calc(15px + 10 * 0.0520833333vw);
+  }
+}
+@media (max-width: 768px) {
+  .common_wrapper.partner h3 {
+    padding-right: calc(15px + 17 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .common_wrapper.partner h3 {
+    padding-right: calc(15px + 10 * 0.0520833333vw);
+  }
+}
+@media (max-width: 768px) {
+  .common_wrapper.partner h3 {
+    font-size: calc(14px + 3.4 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .common_wrapper.partner h3 {
+    font-size: calc(14px + 2 * 0.0520833333vw);
+  }
+}
+.common_wrapper.partner .summ {
+  color: var(--blue);
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+@media (max-width: 768px) {
+  .common_wrapper.partner .summ {
+    padding-left: calc(15px + 17 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .common_wrapper.partner .summ {
+    padding-left: calc(15px + 10 * 0.0520833333vw);
+  }
+}
+@media (max-width: 768px) {
+  .common_wrapper.partner .summ {
+    padding-right: calc(15px + 17 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .common_wrapper.partner .summ {
+    padding-right: calc(15px + 10 * 0.0520833333vw);
+  }
+}
+@media (max-width: 768px) {
+  .common_wrapper.partner .summ {
+    font-size: calc(16px + 3.4 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .common_wrapper.partner .summ {
+    font-size: calc(16px + 2 * 0.0520833333vw);
+  }
+}
+.common_wrapper.partner .referal_list_header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .common_wrapper.partner .referal_list_header {
+    padding-left: calc(15px + 17 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .common_wrapper.partner .referal_list_header {
+    padding-left: calc(15px + 10 * 0.0520833333vw);
+  }
+}
+@media (max-width: 768px) {
+  .common_wrapper.partner .referal_list_header {
+    padding-right: calc(15px + 17 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .common_wrapper.partner .referal_list_header {
+    padding-right: calc(15px + 10 * 0.0520833333vw);
+  }
+}
+@media (max-width: 768px) {
+  .common_wrapper.partner .referal_list_header {
+    font-size: calc(12px + 6.8 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .common_wrapper.partner .referal_list_header {
+    font-size: calc(12px + 4 * 0.0520833333vw);
+  }
+}
+.common_wrapper.partner .referal_list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.common_wrapper.partner .referal_list .referal_list_item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  border-bottom: 1px solid var(--black);
+}
+@media (max-width: 768px) {
+  .common_wrapper.partner .referal_list .referal_list_item {
+    padding-left: calc(15px + 17 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .common_wrapper.partner .referal_list .referal_list_item {
+    padding-left: calc(15px + 10 * 0.0520833333vw);
+  }
+}
+@media (max-width: 768px) {
+  .common_wrapper.partner .referal_list .referal_list_item {
+    padding-right: calc(15px + 17 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .common_wrapper.partner .referal_list .referal_list_item {
+    padding-right: calc(15px + 10 * 0.0520833333vw);
+  }
+}
+@media (max-width: 768px) {
+  .common_wrapper.partner .referal_list .referal_list_item {
+    font-size: calc(12px + 6.8 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .common_wrapper.partner .referal_list .referal_list_item {
+    font-size: calc(12px + 4 * 0.0520833333vw);
+  }
+}
+.common_wrapper.partner .referal_list .referal_list_item .name {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}/*# sourceMappingURL=partner.css.map */

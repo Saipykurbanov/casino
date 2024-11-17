@@ -1,0 +1,383 @@
+@import './../../../style/common';
+
+.profile {
+    width: 100%;
+    opacity: 0;
+    animation: Open 0.8s forwards;
+    display: flex;
+    gap: 20px;
+
+    @include mediaMaxWidth(800) {
+        flex-direction: column;
+    }
+
+    .user {
+        width: 100%;
+        max-width: 240px;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        @include mediaMaxWidth(800) {
+            flex-direction: row;
+            max-width: 100%;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .user_avatar_wrapper {
+            height: 240px;
+            min-width: 240px;
+            border-radius: 50%;
+            padding: 5px;
+            background: linear-gradient(270.00deg, rgb(0, 173, 181) 3.817%,rgb(144, 1, 156) 100%);
+
+            @include mediaMaxWidth(800) {
+                height: 200px;
+                min-width: 200px;
+            }
+            
+            .user_avatar {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                background-color: var(--black);
+                border-radius: 50%;
+                overflow: hidden;
+
+                & img {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                }
+            }
+        }
+
+        .user_info_wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            .user_info {
+                & h3 {
+                    font-size: 16px;
+                }
+    
+                .name {
+                    @include adaptiveFont(24, 20);
+                    font-weight: 500;
+                }
+    
+                .email {
+                    @include adaptiveFont(20, 18);
+    
+                }
+            }
+        }
+
+        .balance_block {
+            // width: 100%;
+            @include adaptiveProperty(padding, 25, 15);
+            background-color: var(--grey);
+            border-radius: 10px;
+            height: max-content;
+            min-width: 190px;
+
+            @include mediaMaxWidth(800) {
+                flex: 1;
+            }
+
+            .balance {
+                font-size: 16px;
+                font-weight: 600;
+                margin-top: 3px;
+                margin-bottom: 10px;
+            }
+        }
+
+        .controll_block {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            width: 100%;
+
+            & .main_button {
+                flex: 1;
+                padding: 8px;
+                font-size: 14px;
+            }
+        }
+    }
+
+    .user_detail {
+        display: flex;
+        flex-shrink: 0;
+        flex-direction: column;
+        gap: 20px;
+        flex: 1;
+
+        .statistic {
+            width: 100%;
+            display: flex;
+            @include adaptiveProperty(gap, 50, 30);
+
+            .statistic_item{
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+
+                & img {
+                    height: max-content;
+                }
+
+                & h4 {
+                    @include adaptiveFont(16, 12);
+                }
+
+                & p {
+                    @include adaptiveFont(18, 14);
+                    font-weight: 600;
+                    color: var(--blue);
+                }
+            }
+        }
+
+        .user_header_wrapper {
+            height: 40px;
+            // width: 100%;
+            min-height: 40px;
+            overflow-x: auto;
+            // min-height: 45px;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            @include mediaMaxWidth(768) {
+                margin: 0 -15px;
+                padding: 0 15px;
+                flex: 1;
+            }
+
+            .user_header {
+                display: flex;
+                
+                & a.tab_link {
+                    background-color: var(--grey);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 0 15px;
+                    flex: 1;
+                    min-height: 40px;
+                    border-right: 1px solid var(--black);
+                    transition: 0.4s;
+
+                    &:nth-child(1) {
+                        border-radius: 10px 0 0 10px;
+                    }
+
+                    &:nth-last-child(1) {
+                        border-right: none;
+                        border-radius: 0 10px 10px 0;
+                    }
+
+                    &.active {
+                        background: var(--blue);
+                    }
+
+                    @include mediaMinWidth(992) {
+                        &:hover {
+                            background-color: var(--blue);
+                        }
+                    }
+                }
+            }
+        }
+
+        .tabs_container {
+            height: 50dvh;
+            width: 100%;
+
+            .common_wrapper {
+                background: var(--grey);
+                border-radius: 20px;
+                opacity: 0;
+                animation: Open 0.8s forwards;
+                @include adaptiveProperty(padding-top, 25, 15);
+                @include adaptiveProperty(padding-bottom, 25, 15);
+                
+                &.operation, &.payments, &.withdraw {
+                    height: 100%;
+                }
+
+                .common_header {
+                    width: 100%;
+                    display: grid;
+                    gap: 10px;
+                    @include adaptiveFont(14, 12);
+                    @include adaptiveProperty(padding-left, 25, 15);
+                    @include adaptiveProperty(padding-right, 25, 15);
+                    margin-bottom: 10px;
+                    
+                    &.operation {
+                        grid-template-columns: repeat(4, 1fr);
+
+                        .summ,
+                        .description {
+                            text-align: center;
+                        }
+                
+                        .data {
+                            text-align: end;
+                        }
+                    }
+
+                    &.payments {
+                        grid-template-columns: repeat(5, 1fr);
+                        @include adaptiveFont(14, 10);
+
+                        .pay,
+                        .way,
+                        .status {
+                            text-align: center;
+                        }
+
+                        .data {
+                            text-align: end;
+                        }
+                    }
+
+                    &.withdraw {
+                        grid-template-columns: minmax(60px, 130px) minmax(60px, 1fr) 1fr 1fr 1fr minmax(70px, 1fr);
+                        
+                        @include mediaMaxWidth(450) {
+                            grid-template-columns: minmax(60px, 130px) minmax(60px, 1fr) 1fr minmax(70px, 1fr);
+
+                            .wallet,
+                            .status {
+                                display: none;
+                            }
+                        }
+
+                        .summ,
+                        .way,
+                        .wallet,
+                        .status {
+                            text-align: center;
+                        }
+
+                        .data {
+                            text-align: end;
+                        }
+                    }
+                }
+            
+                .common_list {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    flex-shrink: 0;
+            
+                    .list_item {
+                        width: 100%;
+                        display: grid;
+                        align-items: center;
+                        gap: 10px;
+                        height: 40px;
+                        @include adaptiveFont(14, 12);
+                        @include adaptiveProperty(padding-left, 25, 15);
+                        @include adaptiveProperty(padding-right, 25, 15);
+                        border-bottom: 1px solid var(--black);
+
+                        &.operation {
+                            grid-template-columns: repeat(4, 1fr);
+
+                            .summ,
+                            .description {
+                                text-align: center;
+                            }
+
+                            .summ {
+                                color: var(--blue);
+                                text-overflow: ellipsis;
+                                overflow: hidden;
+                            }
+                    
+                            .data {
+                                text-align: end;
+                            }
+                        }
+
+                        &.payments {
+                            grid-template-columns: repeat(5, 1fr);
+                            @include adaptiveFont(14, 10);
+                            
+                            .name {
+                                text-overflow: ellipsis;
+                                overflow: hidden;
+                            }
+
+                            .pay {
+                                color: var(--blue);
+                                text-overflow: ellipsis;
+                                overflow: hidden;
+                            }
+
+                            .pay,
+                            .way,
+                            .status {
+                                text-align: center;
+                            }
+    
+                            .data {
+                                text-align: end;
+                            }
+                        }
+
+                        &.withdraw {
+                            grid-template-columns: minmax(60px, 130px) minmax(60px, 1fr) 1fr 1fr 1fr minmax(70px, 1fr);
+
+                            @include mediaMaxWidth(450) {
+                                grid-template-columns: minmax(60px, 130px) minmax(60px, 1fr) 1fr minmax(70px, 1fr);
+
+                                .wallet,
+                                .status {
+                                    display: none;
+                                }
+                            }
+    
+                            .summ,
+                            .way,
+                            .wallet,
+                            .status {
+                                text-align: center;
+                            }
+
+                            .user_id {
+                                text-overflow: ellipsis;
+                                overflow: hidden;
+                            }
+
+                            .summ {
+                                color: var(--blue);
+                                text-overflow: ellipsis;
+                                overflow: hidden;
+                            }
+    
+                            .data {
+                                text-align: end;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

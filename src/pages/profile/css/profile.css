@@ -1,0 +1,471 @@
+@charset "UTF-8";
+/*-------------Миксины----------------*/
+.profile {
+  width: 100%;
+  opacity: 0;
+  animation: Open 0.8s forwards;
+  display: flex;
+  gap: 20px;
+}
+@media screen and (max-width: 800px) {
+  .profile {
+    flex-direction: column;
+  }
+}
+.profile .user {
+  width: 100%;
+  max-width: 240px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+@media screen and (max-width: 800px) {
+  .profile .user {
+    flex-direction: row;
+    max-width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+.profile .user .user_avatar_wrapper {
+  height: 240px;
+  min-width: 240px;
+  border-radius: 50%;
+  padding: 5px;
+  background: linear-gradient(270deg, rgb(0, 173, 181) 3.817%, rgb(144, 1, 156) 100%);
+}
+@media screen and (max-width: 800px) {
+  .profile .user .user_avatar_wrapper {
+    height: 200px;
+    min-width: 200px;
+  }
+}
+.profile .user .user_avatar_wrapper .user_avatar {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: var(--black);
+  border-radius: 50%;
+  overflow: hidden;
+}
+.profile .user .user_avatar_wrapper .user_avatar img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.profile .user .user_info_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.profile .user .user_info_wrapper .user_info h3 {
+  font-size: 16px;
+}
+.profile .user .user_info_wrapper .user_info .name {
+  font-weight: 500;
+}
+@media (max-width: 768px) {
+  .profile .user .user_info_wrapper .user_info .name {
+    font-size: calc(20px + 6.8 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .profile .user .user_info_wrapper .user_info .name {
+    font-size: calc(20px + 4 * 0.0520833333vw);
+  }
+}
+@media (max-width: 768px) {
+  .profile .user .user_info_wrapper .user_info .email {
+    font-size: calc(18px + 3.4 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .profile .user .user_info_wrapper .user_info .email {
+    font-size: calc(18px + 2 * 0.0520833333vw);
+  }
+}
+.profile .user .balance_block {
+  background-color: var(--grey);
+  border-radius: 10px;
+  height: -moz-max-content;
+  height: max-content;
+  min-width: 190px;
+}
+@media (max-width: 768px) {
+  .profile .user .balance_block {
+    padding: calc(15px + 17 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .profile .user .balance_block {
+    padding: calc(15px + 10 * 0.0520833333vw);
+  }
+}
+@media screen and (max-width: 800px) {
+  .profile .user .balance_block {
+    flex: 1;
+  }
+}
+.profile .user .balance_block .balance {
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 3px;
+  margin-bottom: 10px;
+}
+.profile .user .controll_block {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+}
+.profile .user .controll_block .main_button {
+  flex: 1;
+  padding: 8px;
+  font-size: 14px;
+}
+.profile .user_detail {
+  display: flex;
+  flex-shrink: 0;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+}
+.profile .user_detail .statistic {
+  width: 100%;
+  display: flex;
+}
+@media (max-width: 768px) {
+  .profile .user_detail .statistic {
+    gap: calc(30px + 34 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .profile .user_detail .statistic {
+    gap: calc(30px + 20 * 0.0520833333vw);
+  }
+}
+.profile .user_detail .statistic .statistic_item {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.profile .user_detail .statistic .statistic_item img {
+  height: -moz-max-content;
+  height: max-content;
+}
+@media (max-width: 768px) {
+  .profile .user_detail .statistic .statistic_item h4 {
+    font-size: calc(12px + 6.8 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .profile .user_detail .statistic .statistic_item h4 {
+    font-size: calc(12px + 4 * 0.0520833333vw);
+  }
+}
+.profile .user_detail .statistic .statistic_item p {
+  font-weight: 600;
+  color: var(--blue);
+}
+@media (max-width: 768px) {
+  .profile .user_detail .statistic .statistic_item p {
+    font-size: calc(14px + 6.8 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .profile .user_detail .statistic .statistic_item p {
+    font-size: calc(14px + 4 * 0.0520833333vw);
+  }
+}
+.profile .user_detail .user_header_wrapper {
+  height: 40px;
+  min-height: 40px;
+  overflow-x: auto;
+}
+.profile .user_detail .user_header_wrapper::-webkit-scrollbar {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .profile .user_detail .user_header_wrapper {
+    margin: 0 -15px;
+    padding: 0 15px;
+    flex: 1;
+  }
+}
+.profile .user_detail .user_header_wrapper .user_header {
+  display: flex;
+}
+.profile .user_detail .user_header_wrapper .user_header a.tab_link {
+  background-color: var(--grey);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 15px;
+  flex: 1;
+  min-height: 40px;
+  border-right: 1px solid var(--black);
+  transition: 0.4s;
+}
+.profile .user_detail .user_header_wrapper .user_header a.tab_link:nth-child(1) {
+  border-radius: 10px 0 0 10px;
+}
+.profile .user_detail .user_header_wrapper .user_header a.tab_link:nth-last-child(1) {
+  border-right: none;
+  border-radius: 0 10px 10px 0;
+}
+.profile .user_detail .user_header_wrapper .user_header a.tab_link.active {
+  background: var(--blue);
+}
+@media screen and (min-width: 992px) {
+  .profile .user_detail .user_header_wrapper .user_header a.tab_link:hover {
+    background-color: var(--blue);
+  }
+}
+.profile .user_detail .tabs_container {
+  height: 50dvh;
+  width: 100%;
+}
+.profile .user_detail .tabs_container .common_wrapper {
+  background: var(--grey);
+  border-radius: 20px;
+  opacity: 0;
+  animation: Open 0.8s forwards;
+}
+@media (max-width: 768px) {
+  .profile .user_detail .tabs_container .common_wrapper {
+    padding-top: calc(15px + 17 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .profile .user_detail .tabs_container .common_wrapper {
+    padding-top: calc(15px + 10 * 0.0520833333vw);
+  }
+}
+@media (max-width: 768px) {
+  .profile .user_detail .tabs_container .common_wrapper {
+    padding-bottom: calc(15px + 17 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .profile .user_detail .tabs_container .common_wrapper {
+    padding-bottom: calc(15px + 10 * 0.0520833333vw);
+  }
+}
+.profile .user_detail .tabs_container .common_wrapper.operation, .profile .user_detail .tabs_container .common_wrapper.payments, .profile .user_detail .tabs_container .common_wrapper.withdraw {
+  height: 100%;
+}
+.profile .user_detail .tabs_container .common_wrapper .common_header {
+  width: 100%;
+  display: grid;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+@media (max-width: 768px) {
+  .profile .user_detail .tabs_container .common_wrapper .common_header {
+    font-size: calc(12px + 3.4 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .profile .user_detail .tabs_container .common_wrapper .common_header {
+    font-size: calc(12px + 2 * 0.0520833333vw);
+  }
+}
+@media (max-width: 768px) {
+  .profile .user_detail .tabs_container .common_wrapper .common_header {
+    padding-left: calc(15px + 17 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .profile .user_detail .tabs_container .common_wrapper .common_header {
+    padding-left: calc(15px + 10 * 0.0520833333vw);
+  }
+}
+@media (max-width: 768px) {
+  .profile .user_detail .tabs_container .common_wrapper .common_header {
+    padding-right: calc(15px + 17 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .profile .user_detail .tabs_container .common_wrapper .common_header {
+    padding-right: calc(15px + 10 * 0.0520833333vw);
+  }
+}
+.profile .user_detail .tabs_container .common_wrapper .common_header.operation {
+  grid-template-columns: repeat(4, 1fr);
+}
+.profile .user_detail .tabs_container .common_wrapper .common_header.operation .summ,
+.profile .user_detail .tabs_container .common_wrapper .common_header.operation .description {
+  text-align: center;
+}
+.profile .user_detail .tabs_container .common_wrapper .common_header.operation .data {
+  text-align: end;
+}
+.profile .user_detail .tabs_container .common_wrapper .common_header.payments {
+  grid-template-columns: repeat(5, 1fr);
+}
+@media (max-width: 768px) {
+  .profile .user_detail .tabs_container .common_wrapper .common_header.payments {
+    font-size: calc(10px + 6.8 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .profile .user_detail .tabs_container .common_wrapper .common_header.payments {
+    font-size: calc(10px + 4 * 0.0520833333vw);
+  }
+}
+.profile .user_detail .tabs_container .common_wrapper .common_header.payments .pay,
+.profile .user_detail .tabs_container .common_wrapper .common_header.payments .way,
+.profile .user_detail .tabs_container .common_wrapper .common_header.payments .status {
+  text-align: center;
+}
+.profile .user_detail .tabs_container .common_wrapper .common_header.payments .data {
+  text-align: end;
+}
+.profile .user_detail .tabs_container .common_wrapper .common_header.withdraw {
+  grid-template-columns: minmax(60px, 130px) minmax(60px, 1fr) 1fr 1fr 1fr minmax(70px, 1fr);
+}
+@media screen and (max-width: 450px) {
+  .profile .user_detail .tabs_container .common_wrapper .common_header.withdraw {
+    grid-template-columns: minmax(60px, 130px) minmax(60px, 1fr) 1fr minmax(70px, 1fr);
+  }
+  .profile .user_detail .tabs_container .common_wrapper .common_header.withdraw .wallet,
+  .profile .user_detail .tabs_container .common_wrapper .common_header.withdraw .status {
+    display: none;
+  }
+}
+.profile .user_detail .tabs_container .common_wrapper .common_header.withdraw .summ,
+.profile .user_detail .tabs_container .common_wrapper .common_header.withdraw .way,
+.profile .user_detail .tabs_container .common_wrapper .common_header.withdraw .wallet,
+.profile .user_detail .tabs_container .common_wrapper .common_header.withdraw .status {
+  text-align: center;
+}
+.profile .user_detail .tabs_container .common_wrapper .common_header.withdraw .data {
+  text-align: end;
+}
+.profile .user_detail .tabs_container .common_wrapper .common_list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+.profile .user_detail .tabs_container .common_wrapper .common_list .list_item {
+  width: 100%;
+  display: grid;
+  align-items: center;
+  gap: 10px;
+  height: 40px;
+  border-bottom: 1px solid var(--black);
+}
+@media (max-width: 768px) {
+  .profile .user_detail .tabs_container .common_wrapper .common_list .list_item {
+    font-size: calc(12px + 3.4 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .profile .user_detail .tabs_container .common_wrapper .common_list .list_item {
+    font-size: calc(12px + 2 * 0.0520833333vw);
+  }
+}
+@media (max-width: 768px) {
+  .profile .user_detail .tabs_container .common_wrapper .common_list .list_item {
+    padding-left: calc(15px + 17 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .profile .user_detail .tabs_container .common_wrapper .common_list .list_item {
+    padding-left: calc(15px + 10 * 0.0520833333vw);
+  }
+}
+@media (max-width: 768px) {
+  .profile .user_detail .tabs_container .common_wrapper .common_list .list_item {
+    padding-right: calc(15px + 17 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .profile .user_detail .tabs_container .common_wrapper .common_list .list_item {
+    padding-right: calc(15px + 10 * 0.0520833333vw);
+  }
+}
+.profile .user_detail .tabs_container .common_wrapper .common_list .list_item.operation {
+  grid-template-columns: repeat(4, 1fr);
+}
+.profile .user_detail .tabs_container .common_wrapper .common_list .list_item.operation .summ,
+.profile .user_detail .tabs_container .common_wrapper .common_list .list_item.operation .description {
+  text-align: center;
+}
+.profile .user_detail .tabs_container .common_wrapper .common_list .list_item.operation .summ {
+  color: var(--blue);
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.profile .user_detail .tabs_container .common_wrapper .common_list .list_item.operation .data {
+  text-align: end;
+}
+.profile .user_detail .tabs_container .common_wrapper .common_list .list_item.payments {
+  grid-template-columns: repeat(5, 1fr);
+}
+@media (max-width: 768px) {
+  .profile .user_detail .tabs_container .common_wrapper .common_list .list_item.payments {
+    font-size: calc(10px + 6.8 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .profile .user_detail .tabs_container .common_wrapper .common_list .list_item.payments {
+    font-size: calc(10px + 4 * 0.0520833333vw);
+  }
+}
+.profile .user_detail .tabs_container .common_wrapper .common_list .list_item.payments .name {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.profile .user_detail .tabs_container .common_wrapper .common_list .list_item.payments .pay {
+  color: var(--blue);
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.profile .user_detail .tabs_container .common_wrapper .common_list .list_item.payments .pay,
+.profile .user_detail .tabs_container .common_wrapper .common_list .list_item.payments .way,
+.profile .user_detail .tabs_container .common_wrapper .common_list .list_item.payments .status {
+  text-align: center;
+}
+.profile .user_detail .tabs_container .common_wrapper .common_list .list_item.payments .data {
+  text-align: end;
+}
+.profile .user_detail .tabs_container .common_wrapper .common_list .list_item.withdraw {
+  grid-template-columns: minmax(60px, 130px) minmax(60px, 1fr) 1fr 1fr 1fr minmax(70px, 1fr);
+}
+@media screen and (max-width: 450px) {
+  .profile .user_detail .tabs_container .common_wrapper .common_list .list_item.withdraw {
+    grid-template-columns: minmax(60px, 130px) minmax(60px, 1fr) 1fr minmax(70px, 1fr);
+  }
+  .profile .user_detail .tabs_container .common_wrapper .common_list .list_item.withdraw .wallet,
+  .profile .user_detail .tabs_container .common_wrapper .common_list .list_item.withdraw .status {
+    display: none;
+  }
+}
+.profile .user_detail .tabs_container .common_wrapper .common_list .list_item.withdraw .summ,
+.profile .user_detail .tabs_container .common_wrapper .common_list .list_item.withdraw .way,
+.profile .user_detail .tabs_container .common_wrapper .common_list .list_item.withdraw .wallet,
+.profile .user_detail .tabs_container .common_wrapper .common_list .list_item.withdraw .status {
+  text-align: center;
+}
+.profile .user_detail .tabs_container .common_wrapper .common_list .list_item.withdraw .user_id {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.profile .user_detail .tabs_container .common_wrapper .common_list .list_item.withdraw .summ {
+  color: var(--blue);
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.profile .user_detail .tabs_container .common_wrapper .common_list .list_item.withdraw .data {
+  text-align: end;
+}/*# sourceMappingURL=profile.css.map */
