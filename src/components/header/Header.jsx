@@ -9,6 +9,7 @@ import GamesList from './components/GamesList';
 const Header = () => {
 
     const [isOpen, setIsOpen] = useState('close')
+    const [burger, setBurger] = useState('close')
 
     const toggleList = (e) => {
         e.stopPropagation()
@@ -19,7 +20,17 @@ const Header = () => {
         }
     }
 
+    const toggleBurger = (e) => {
+        e.stopPropagation()
+        if(burger === 'open') {
+            setBurger('close')
+        } else {
+            setBurger('open')
+        }
+    }
+
     const closeList = () => {
+        setBurger('close')
         setIsOpen('close')
     }
 
@@ -63,6 +74,27 @@ const Header = () => {
                         <Button mode={'fill'} callback={(e) => open(e, 2)}>
                             Регистрация
                         </Button>
+                    </div>
+
+                    <div className="burger" onClick={toggleBurger}>
+                        <span></span><span></span><span></span>
+                        <div className={`burger_list ${burger}`}>
+                            <div className="burger_list_wrapper">
+                                <NavLink to={'/'} className="link">Главная</NavLink>
+                                <NavLink to={'/crash'} className="link">Crash</NavLink>
+                                <NavLink to={'/roulette'} className="link">Рулетка</NavLink>
+                                <NavLink to={'/slots'} className="link">Слоты</NavLink>
+                                <NavLink to={'/cards'} className="link">Карточки</NavLink>
+                                <NavLink to={'/coins'} className="link">Монетка</NavLink>
+
+                                <Button callback={(e) => open(e, 1)}>
+                                    Войти
+                                </Button>
+                                <Button mode={'fill'} callback={(e) => open(e, 2)}>
+                                    Регистрация
+                                </Button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
