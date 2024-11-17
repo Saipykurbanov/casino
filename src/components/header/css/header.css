@@ -41,6 +41,7 @@ header .container .header_wrapper nav .logo img {
 }
 header .container .header_wrapper nav .link {
   transition: 0.4s;
+  cursor: pointer;
 }
 @media (max-width: 768px) {
   header .container .header_wrapper nav .link {
@@ -64,6 +65,84 @@ header .container .header_wrapper nav .link.active {
   header .container .header_wrapper nav .link {
     display: none;
   }
+}
+header .container .header_wrapper nav .link.games {
+  position: relative;
+}
+header .container .header_wrapper nav .link.games .games_btn {
+  display: flex;
+  align-content: center;
+  gap: 5px;
+}
+header .container .header_wrapper nav .link.games .games_btn span {
+  display: block;
+  position: relative;
+  transform: rotate(90deg);
+}
+header .container .header_wrapper nav .link.games .game_list_wrapper {
+  left: 50%;
+  bottom: 0;
+  position: absolute;
+  transform: translate(-50%, calc(100% + 0px));
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  background-color: var(--black);
+  overflow: hidden;
+  height: 0;
+  transition: 0.3s;
+  transition-delay: 0.3s;
+}
+header .container .header_wrapper nav .link.games .game_list_wrapper.open {
+  height: 170px;
+  transition-delay: 0s;
+}
+header .container .header_wrapper nav .link.games .game_list_wrapper.open .games_list {
+  transition-delay: 0.3s;
+  opacity: 1;
+}
+header .container .header_wrapper nav .link.games .game_list_wrapper .games_list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  transition: 0.3s;
+  transition-delay: 0s;
+  opacity: 0;
+}
+header .container .header_wrapper nav .link.games .game_list_wrapper .games_list a {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  transition: 0.4s;
+}
+header .container .header_wrapper nav .link.games .game_list_wrapper .games_list a.active {
+  color: var(--blue);
+}
+header .container .header_wrapper nav .link.games .game_list_wrapper .games_list a.active svg path {
+  fill: var(--blue);
+}
+@media screen and (min-width: 992px) {
+  header .container .header_wrapper nav .link.games .game_list_wrapper .games_list a:hover {
+    color: var(--blue);
+  }
+}
+header .container .header_wrapper nav .link.games .game_list_wrapper .games_list a svg path {
+  transition: 0.4s;
+}
+@media screen and (min-width: 992px) {
+  header .container .header_wrapper nav .link.games .game_list_wrapper .games_list a:hover svg path {
+    fill: var(--blue);
+  }
+}
+@media screen and (min-width: 992px) {
+  header .container .header_wrapper nav .link.games .game_list_wrapper .games_list a:nth-child(1):hover svg path {
+    stroke: var(--blue);
+    fill: transparent;
+  }
+}
+header .container .header_wrapper nav .link.games .game_list_wrapper .games_list a:nth-child(1).active svg path {
+  stroke: var(--blue);
+  fill: transparent;
 }
 header .container .header_wrapper .button_block {
   display: flex;
