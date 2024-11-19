@@ -88,10 +88,10 @@
             position: relative;
             width: 100%;
             height: 120px;
-            padding: 0 10px;
+            padding: 0 ;
             background: var(--black);
             border-radius: 10px;
-            overflow: hidden;
+            overflow: hidden;   
 
             .line {
                 position: absolute;
@@ -108,7 +108,15 @@
                 height: 100%;
                 display: flex;
                 align-items: center;
-                gap: 10px;
+                justify-content:center;
+                transform: translateX(-60px);
+                // gap: 10px;
+
+                & section {
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                }
 
                 .roulette_item {
                     display: flex;
@@ -119,6 +127,7 @@
                     width: 100px;
                     border-radius: 10px;
                     font-size: 40px;
+                    margin: 0px 5px;
 
                     &.red{
                         background: var(--red-gradient);
