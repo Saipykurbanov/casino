@@ -36,8 +36,8 @@ export default function useRoulette() {
     }
 
     useEffect(() => {
-        spinRoullete(1)
         setInterval(() => {
+            spinRoullete(1)
         }, 10000)
     }, [])
 
