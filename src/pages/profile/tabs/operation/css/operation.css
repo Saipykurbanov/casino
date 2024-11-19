@@ -1,0 +1,84 @@
+@charset "UTF-8";
+/*-------------Миксины----------------*/
+.common_wrapper.operation {
+  height: 100%;
+}
+.common_wrapper.operation .operation_header {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+@media (max-width: 768px) {
+  .common_wrapper.operation .operation_header {
+    font-size: calc(12px + 3.4 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .common_wrapper.operation .operation_header {
+    font-size: calc(12px + 2 * 0.0520833333vw);
+  }
+}
+@media (max-width: 768px) {
+  .common_wrapper.operation .operation_header {
+    padding-left: calc(15px + 17 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .common_wrapper.operation .operation_header {
+    padding-left: calc(15px + 10 * 0.0520833333vw);
+  }
+}
+@media (max-width: 768px) {
+  .common_wrapper.operation .operation_header {
+    padding-right: calc(15px + 17 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .common_wrapper.operation .operation_header {
+    padding-right: calc(15px + 10 * 0.0520833333vw);
+  }
+}
+.common_wrapper.operation .operation_header .summ,
+.common_wrapper.operation .operation_header .description {
+  text-align: center;
+}
+.common_wrapper.operation .operation_header .data {
+  text-align: end;
+}
+.common_wrapper.operation .operation_list {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+@media (max-width: 768px) {
+  .common_wrapper.operation .operation_list .operation_list_item {
+    font-size: calc(12px + 3.4 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .common_wrapper.operation .operation_list .operation_list_item {
+    font-size: calc(12px + 2 * 0.0520833333vw);
+  }
+}
+@media (max-width: 768px) {
+  .common_wrapper.operation .operation_list .operation_list_item {
+    padding-left: calc(15px + 17 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .common_wrapper.operation .operation_list .operation_list_item {
+    padding-left: calc(15px + 10 * 0.0520833333vw);
+  }
+}
+@media (max-width: 768px) {
+  .common_wrapper.operation .operation_list .operation_list_item {
+    padding-right: calc(15px + 17 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .common_wrapper.operation .operation_list .operation_list_item {
+    padding-right: calc(15px + 10 * 0.0520833333vw);
+  }
+}/*# sourceMappingURL=operation.css.map */

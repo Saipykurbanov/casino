@@ -1,0 +1,37 @@
+@import './../../../../../style/common';
+
+.common_wrapper.operation {
+    height: 100%;
+
+    .operation_header {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        @include adaptiveFont(14, 12);
+        @include adaptiveProperty(padding-left, 25, 15);
+        @include adaptiveProperty(padding-right, 25, 15);
+
+        .summ,
+        .description {
+            text-align: center;
+        }
+
+        .data {
+            text-align: end;
+        }
+    }
+
+    .operation_list {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+
+        .operation_list_item {
+            @include adaptiveFont(14, 12);
+            @include adaptiveProperty(padding-left, 25, 15);
+            @include adaptiveProperty(padding-right, 25, 15);
+        }
+    }
+}
