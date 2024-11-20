@@ -14,28 +14,28 @@ const Games = () => {
 
             <div className="games_grid">
                 <NavLink to={'/crash'} className="games_grid_item a">
-                    <h4>CRASH</h4>
-                    <img src="/images/noimage.png" alt="" />
+                    <h4>CRASH-UP</h4>
+                    <img src="/images/gameimg.svg" alt="" />
                 </NavLink>
 
                 <NavLink to={'/slots'} className="games_grid_item b">
                     <h4>СЛОТЫ</h4>
-                    <img src="/images/noimage.png" alt="" />
+                    <img src="/images/gameimg.svg" alt="" />
                 </NavLink>
 
                 <NavLink to={'/roulette'} className="games_grid_item c">
                     <h4>РУЛЕТКА</h4>
-                    <img src="/images/noimage.png" alt="" />
+                    <img src="/images/gameimg.svg" alt="" />
                 </NavLink>
 
                 <NavLink to={'/cards'} className="games_grid_item d">
                     <h4>КАРТОЧКИ</h4>
-                    <img src="/images/noimage.png" alt="" />
+                    <img src="/images/gameimg.svg" alt="" />
                 </NavLink>
 
                 <NavLink to={'/coins'} className="games_grid_item e">
                     <h4>МОНЕТКА</h4>
-                    <img src="/images/noimage.png" alt="" />
+                    <img src="/images/gameimg.svg" alt="" />
                 </NavLink>
             </div>
         </div>

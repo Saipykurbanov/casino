@@ -89,6 +89,7 @@ header {
                                     gap: 5px;
                                     align-items: center;
                                     transition: 0.4s;
+                                    white-space: nowrap;
                                     &.active {
                                         color: var(--blue);
                                         svg {
