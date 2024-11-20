@@ -128,12 +128,16 @@
                     }
                     &.start {
                         animation: coin-animation 1.2s ease-out forwards;
+                    }
+                    
+                    // Если решка то добавляем тако класс
+                    &.side_x {
                         .side {
                             &.up {
-
+                                background-image: url('./../../../../public/images/x2.png');
                             }
                             &.x {
-                                
+                                background-image: url('./../../../../public/images/up2.png');
                             }
                         }
                     }

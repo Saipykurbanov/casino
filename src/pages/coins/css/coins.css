@@ -188,6 +188,12 @@
 .coins .coins_game .window .game_process .coin.start {
   animation: coin-animation 1.2s ease-out forwards;
 }
+.coins .coins_game .window .game_process .coin.side_x .side.up {
+  background-image: url("./../../../../public/images/x2.png");
+}
+.coins .coins_game .window .game_process .coin.side_x .side.x {
+  background-image: url("./../../../../public/images/up2.png");
+}
 .coins .coins_game .window .coef_list {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
