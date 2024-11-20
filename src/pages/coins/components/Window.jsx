@@ -1,7 +1,7 @@
 import React from 'react';
 import CoefListItem from './CoefListItem';
 
-const Window = () => {
+const Window = ({status}) => {
 
     const coef_list = ['1.9', '3.8', '7.6', '15.2', '30.4', '60.8', '121.6', '243.2', '484.4', '972.8']
 
@@ -13,8 +13,9 @@ const Window = () => {
                     <div className="number">0</div>
                     <p>Раунд</p>
                 </div>
-                <div className="coin">
-                    <img src="/images/up_big.png" alt="" />
+                <div class={`coin ${status}`}>
+                    <div class="side up"></div>
+                    <div class="side x"></div>
                 </div>
                 <div className="coins_info">
                     <div className="number">x0</div>

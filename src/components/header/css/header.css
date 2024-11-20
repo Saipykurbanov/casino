@@ -115,6 +115,7 @@ header .container .header_wrapper nav .link.games .game_list_wrapper .games_list
   gap: 5px;
   align-items: center;
   transition: 0.4s;
+  white-space: nowrap;
 }
 header .container .header_wrapper nav .link.games .game_list_wrapper .games_list a.active {
   color: var(--blue);

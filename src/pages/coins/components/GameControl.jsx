@@ -1,20 +1,22 @@
 import React from 'react';
 import Button from '../../../components/button/Button';
 import InputWithBtn from '../../../components/input/InputWithBtn';
+import Bet from '../../../utils/Bet';
 
-const GameControl = () => {
+const GameControl = ({play, side, setSide, bet, setBet}) => {
+
     return (
         <div className='game_control'>
             <div className="game_inputs">
                 <h2>МОНЕТКА</h2>
                 <div className="input_block">
-                    <InputWithBtn label={'Ставка'} placeholder={'0.00'}/>
+                    <InputWithBtn onChange={(e) => Bet.onChange(e.target.value, setBet)} label={'Ставка'} placeholder={'0.00'} value={bet} setValue={setBet}/>
                     <div className="control_buttons">
-                        <Button mode={'full fill small'}>+1</Button>
-                        <Button mode={'full fill small'}>+10</Button>
-                        <Button mode={'full fill small'}>+100</Button>
-                        <Button mode={'full fill small'}>+1000</Button>
-                        <Button mode={'full fill small flex red'}>
+                        <Button mode={'full fill small'} callback={() => Bet.plus(1, setBet)}>+1</Button>
+                        <Button mode={'full fill small'} callback={() => Bet.plus(10, setBet)}>+10</Button>
+                        <Button mode={'full fill small'} callback={() => Bet.plus(100, setBet)}>+100</Button>
+                        <Button mode={'full fill small'} callback={() => Bet.plus(1000, setBet)}>+1000</Button>
+                        <Button mode={'full fill small flex red'} callback={() => Bet.clear(setBet)}>
                             <svg width="18.000000" height="18.000000" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <defs>
                                     <clipPath id="clip16_106">
@@ -30,17 +32,17 @@ const GameControl = () => {
                     </div>
                 </div>
                 <div className="coins_block">
-                    <div className="coin_item">
+                    <div className={`coin_item ${side === 1 ? 'active' : ''}`} onClick={() => setSide(1)}>
                         <img src="/images/up.png" alt="" />
                         <p>Решка</p>
                     </div>
-                    <div className="coin_item">
+                    <div className={`coin_item ${side === 2 ? 'active' : ''}`} onClick={() => setSide(2)}>
                         <img src="/images/x.png" alt="" />
                         <p>Орёл</p>
                     </div>
                 </div>
             </div>
-            <Button mode={'fill full'}>
+            <Button mode={'fill full'} callback={play}>
                 ИГРАТЬ
             </Button>
         </div>

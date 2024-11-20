@@ -3,27 +3,20 @@ import './css/crash.css';
 import Window from './components/Window';
 import GameControl from './components/GameControl';
 import UsersBets from './components/UsersBets';
+import useCrash from './hooks/useCrash';
 
 
 const Crash = () => {
 
-    const [status, setStatus] = useState('')
-
-    const toggle = () => {
-        if(status === 'play') {
-            setStatus('')
-        } else {
-            setStatus('play')
-        }
-    }
+    const crash = useCrash()
 
     return (
         <div className='crash'>
 
             <div className="crash_game">
 
-                <GameControl toggle={toggle}/>
-                <Window status={status}/>
+                <GameControl toggle={crash.toggle} bet={crash.bet} setBet={crash.setBet} setCoef={crash.setCoef} coef={crash.coef}/>
+                <Window status={crash.status}/>
 
             </div>
 

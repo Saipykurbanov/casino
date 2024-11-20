@@ -83,9 +83,6 @@
 .coins .coins_game .game_control .game_inputs .coins_block .coin_item.active {
   border-color: var(--blue);
 }
-.coins .coins_game .game_control .game_inputs .coins_block .coin_item:active {
-  transform: translate(2px, 3px);
-}
 .coins .coins_game .window {
   flex: 5;
   border-radius: 20px;
@@ -156,18 +153,46 @@
     font-size: calc(14px + 6 * 0.0520833333vw);
   }
 }
-@media (max-width: 768px) {
-  .coins .coins_game .window .game_process .coin {
-    max-width: calc(110px + 119 * (100vw - 320px) / 1920);
-  }
+.coins .coins_game .window .game_process .coin {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  transition: 3s transform linear;
+  transform-style: preserve-3d;
 }
-@media (min-width: 768px) {
-  .coins .coins_game .window .game_process .coin {
-    max-width: calc(110px + 70 * 0.0520833333vw);
-  }
-}
-.coins .coins_game .window .game_process .coin img {
+.coins .coins_game .window .game_process .coin .side {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  transition: 3s transform linear;
+  width: 100%;
+  height: 100%;
+  background-size: 100%;
+  background-position: center;
+  box-shadow: 0 12px 20px -10px rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+}
+.coins .coins_game .window .game_process .coin .side.up {
+  background-image: url("./../../../../public/images/up2.png");
+}
+.coins .coins_game .window .game_process .coin .side.x {
+  background-image: url("./../../../../public/images/x2.png");
+}
+.coins .coins_game .window .game_process .coin .side:last-of-type {
+  transform: rotateY(-180deg);
+}
+.coins .coins_game .window .game_process .coin.start {
+  animation: coin-animation 1.2s ease-out forwards;
+}
+.coins .coins_game .window .game_process .coin.side_x .side.up {
+  background-image: url("./../../../../public/images/x2.png");
+}
+.coins .coins_game .window .game_process .coin.side_x .side.x {
+  background-image: url("./../../../../public/images/up2.png");
 }
 .coins .coins_game .window .coef_list {
   display: grid;
@@ -347,4 +372,22 @@
 }
 .coins .coins_history .hostory_list .history_item .win.sum {
   color: var(--blue);
+}
+
+@keyframes coin-animation {
+  0% {
+    transform: scale(1) rotateY(0);
+  }
+  50% {
+    transform: scale(1.18) rotateY(864deg);
+  }
+  68% {
+    transform: scale(1.2) rotateY(900deg);
+  }
+  72% {
+    transform: scale(1.18) rotateY(936deg);
+  }
+  to {
+    transform: scale(1) rotateY(3turn);
+  }
 }/*# sourceMappingURL=coins.css.map */

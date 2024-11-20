@@ -60,7 +60,8 @@
                             border-color: var(--blue);
                         }
                         &:active {
-                            transform: translate(2px, 3px);
+                            //transform: translate(2px, 3px);
+                            //border-color: var(--black);
                         }
                     }
                 }
@@ -95,10 +96,50 @@
                     }
                 }
                 .coin {
-                    
-                    @include adaptiveProperty(max-width, 180, 110);
-                    img {
+                    position: relative;
+                    width: 180px;
+                    height: 180px;
+                    transition: 3s transform linear;
+                    transform-style: preserve-3d;
+                    .side {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
                         width: 100%;
+                        height: 100%;
+                        backface-visibility: hidden;
+                        transform-style: preserve-3d;
+                        transition: 3s transform linear;
+                        width: 100%;
+                        height: 100%;
+                        background-size: 100%;
+                        background-position: center;
+                        box-shadow: 0 12px 20px -10px rgba(0,0,0,.4);
+                        border-radius: 50%;
+                        &.up {
+                            background-image: url('./../../../../public/images/up2.png');
+                        }
+                        &.x {
+                            background-image: url('./../../../../public/images/x2.png');
+                        }
+                        &:last-of-type {
+                            transform: rotateY(-180deg)
+                        }
+                    }
+                    &.start {
+                        animation: coin-animation 1.2s ease-out forwards;
+                    }
+                    
+                    // Если решка то добавляем тако класс
+                    &.side_x {
+                        .side {
+                            &.up {
+                                background-image: url('./../../../../public/images/x2.png');
+                            }
+                            &.x {
+                                background-image: url('./../../../../public/images/up2.png');
+                            }
+                        }
                     }
                 }
             }
@@ -217,5 +258,27 @@
                 }
             }
         }
+    }
+}
+
+@keyframes coin-animation {
+    0% {
+        transform: scale(1) rotateY(0)
+    }
+
+    50% {
+        transform: scale(1.18) rotateY(864deg)
+    }
+
+    68% {
+        transform: scale(1.2) rotateY(900deg)
+    }
+
+    72% {
+        transform: scale(1.18) rotateY(936deg)
+    }
+
+    to {
+        transform: scale(1) rotateY(3turn)
     }
 }
