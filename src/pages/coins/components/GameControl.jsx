@@ -3,9 +3,7 @@ import Button from '../../../components/button/Button';
 import InputWithBtn from '../../../components/input/InputWithBtn';
 import Bet from '../../../utils/Bet';
 
-const GameControl = ({side, setSide, bet, setBet}) => {
-
-    console.log(bet)
+const GameControl = ({play, side, setSide, bet, setBet}) => {
 
     return (
         <div className='game_control'>
@@ -44,7 +42,7 @@ const GameControl = ({side, setSide, bet, setBet}) => {
                     </div>
                 </div>
             </div>
-            <Button mode={'fill full'}>
+            <Button mode={'fill full'} callback={play}>
                 ИГРАТЬ
             </Button>
         </div>

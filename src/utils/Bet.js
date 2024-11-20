@@ -1,7 +1,7 @@
 const Bet = {}
 
 Bet.onChange = (value, callback) => {
-    let result = value.replace(/[^0-9.]/g, '').replace('.', '').replace(/\./g,'').replace('x','.');
+    let result = value.replace(/[^0-9.]/g, '').replace('.', 'x').replace(/\./g,'').replace('x','.');
     return callback(result)
 }
 

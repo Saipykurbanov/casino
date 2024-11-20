@@ -15,8 +15,8 @@ const Coins = () => {
 
             <div className="coins_game">
 
-                <GameControl side={coins.side} setSide={coins.setSide} bet={coins.bet} setBet={coins.setBet}/>
-                <Window />
+                <GameControl play={coins.play} side={coins.side} setSide={coins.setSide} bet={coins.bet} setBet={coins.setBet}/>
+                <Window status={coins.status}/>
 
             </div>
 
