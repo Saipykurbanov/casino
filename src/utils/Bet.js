@@ -3,11 +3,10 @@ const Bet = {}
 Bet.onChange = (value, callback) => {
     let result = value.replace(/[^0-9.]/g, '').replace('.', '').replace(/\./g,'').replace('x','.');
     return callback(result)
-  
 }
 
 Bet.plus = (value, callback) => {
-    return callback(prev => prev + value)
+    return callback(prev => Number(prev) + Number(value))
 }
 
 Bet.multiply = (callback) => {
@@ -29,11 +28,15 @@ Bet.divide = (callback) => {
     return callback(prev => {
         let result = prev / 2
         if(result < 0.01) {
-            return 0
+            return 0.01
         } else {
             return result
         }
     })
+}
+
+Bet.clear = (callback) => {
+    return callback('')
 }
 
 export default Bet;
