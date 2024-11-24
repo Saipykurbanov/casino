@@ -24,7 +24,12 @@ const Roulette = () => {
             <RouletteGame rouletteRef={roulette.rouletteRef}/>
 
             <div className="set_bet_block">
-                <SetBet />
+                <SetBet 
+                    bet={roulette.bet} 
+                    setBet={roulette.setBet} 
+                    error={roulette.error} 
+                    setError={roulette.setError}
+                />
 
                 <MakeBet />
             </div>

@@ -1,6 +1,9 @@
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 
 export default function useRoulette() {
+    const [bet, setBet] = useState('')
+    const [error, setError] = useState(false)
+
     const rouletteRef = useRef(null)
     const rouletteStart = useRef()
     const rouletteFinish = useRef()
@@ -41,5 +44,9 @@ export default function useRoulette() {
         }, 10000)
     }, [])
 
-    return { rouletteRef, spinRoullete }
+    return { 
+        bet, setBet,
+        error, setError,
+        rouletteRef, spinRoullete 
+    }
 }

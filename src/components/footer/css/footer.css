@@ -13,15 +13,28 @@ footer .statistic {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 30px;
+  gap: 30px 20px;
+}
+@media screen and (max-width: 992px) {
+  footer .statistic {
+    justify-content: space-around;
+    gap: 50px 30px;
+  }
 }
 footer .statistic .statistic__item {
   display: flex;
   gap: 10px;
   flex-basis: auto;
 }
-footer .statistic .statistic__item img {
-  height: 40px;
+@media (max-width: 768px) {
+  footer .statistic .statistic__item img {
+    height: calc(30px + 17 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  footer .statistic .statistic__item img {
+    height: calc(30px + 10 * 0.0520833333vw);
+  }
 }
 footer .statistic .statistic__item h3 {
   color: var(--blue);
